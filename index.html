@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAPBOOST 生意发展资金 | Nexus Capital</title>
+<meta name="description" content="专为 RM5 Mil 以上的企业而设的生意资金方案。无需抵押，符合 Shariah principles，运营满 2 年、有项目或订单在进行中的企业即可申请。">
+<meta property="og:title" content="CAPBOOST 生意发展资金 | Nexus Capital">
+<meta property="og:description" content="项目/订单已到手，却总是差一点 Cash Flow？只需 4 步骤获得 RM2,000,000 的生意资金。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/hero-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito+Sans:wght@400;600;800;900&display=swap">
+<style>
+/* ============================================================
+   CAPBOOST landing page — rebuilt from 202608 -N-Landing Page_B2_Desktop.pdf
+   Artwork from the designer's "Package B2_Desktop" source files;
+   palette and type taken directly from the PDF.
+   ============================================================ */
+:root{
+  --navy:#1B2A4F;
+  --navy-deep:#002855;
+  --navy-mid:#18395E;
+  --orange:#FF5500;
+  --gold:#FCB002;
+  --cyan:#00D8FF;
+  --cyan-dim:#05C3DD;
+  --blue:#1C75BC;
+  --green:#39B54A;
+  --green-dark:#009444;
+  --ink:#231F20;
+  --muted:#BCBEC0;
+  --paper:#F2F2F2;
+  --frame:#DEE0D7;
+
+  --cn:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --en:"Nunito Sans",Avenir,"Segoe UI",system-ui,sans-serif;
+  --hand:"Ma Shan Zheng","HanziPen SC",cursive;
+
+  --w:720px;              /* design canvas width */
+  --pad:24px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  font-family:var(--cn);
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+.en{font-family:var(--en)}
+.center{text-align:center}
+
+/* ---------- reveal on scroll ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   CTA BUTTON
+   ============================================================ */
+.cta{
+  --shell:url("assets/svg/btn-green.svg");
+  --ar:463.2/116.88;   /* artwork aspect */
+  --mid:42.1%;         /* baseline the designer set for the label, measured off the chevrons */
+  --bezel:9.41% 8.81% 27.48% 2.44%;   /* chrome bezel inside the artwork box */
+  position:relative;display:block;box-sizing:border-box;
+  /* --- CTA SIZE KNOB: change this one number to resize every button --- */
+  width:100%;max-width:520px;aspect-ratio:var(--ar);
+  background:var(--shell) center/100% 100% no-repeat;
+  border:none;padding:0;cursor:pointer;text-decoration:none;
+  transition:transform .18s ease,filter .18s ease;
+}
+/* gold light tracing the outer bezel — a chase around the pill outline */
+@property --orbit{syntax:"<angle>";initial-value:0deg;inherits:false}
+.cta::before{
+  content:"";position:absolute;z-index:1;pointer-events:none;
+  inset:var(--bezel);
+  border-radius:999px;padding:2.5px;
+  background:conic-gradient(from var(--orbit),
+    rgba(252,176,2,0)    0%,
+    rgba(252,176,2,0)   58%,
+    rgba(252,176,2,.55) 68%,
+    #FFD75E             76%,
+    #FFF6D0             80%,
+    #FFD75E             84%,
+    rgba(252,176,2,.55) 92%,
+    rgba(252,176,2,0)  100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  filter:drop-shadow(0 0 5px rgba(255,196,60,.75));
+  animation:orbit 2.8s linear infinite;
+}
+@keyframes orbit{to{--orbit:360deg}}
+@media (prefers-reduced-motion:reduce){.cta::before{animation:none;opacity:.5}}
+
+/* the source artwork's gloss layers were authored to blend with the page behind
+   them, so they can't travel inside a standalone SVG — redone here instead */
+.cta::after{
+  content:"";position:absolute;pointer-events:none;
+  inset:var(--bezel);border-radius:999px;
+  background:linear-gradient(180deg,
+    rgba(255,255,255,.30) 0%,
+    rgba(255,255,255,.10) 30%,
+    rgba(255,255,255,0)   52%);
+}
+.cta span{
+  position:absolute;left:7%;right:7%;top:var(--mid);transform:translateY(-50%);
+  z-index:2;text-align:center;color:#fff;
+  font-family:var(--cn);font-weight:900;font-size:23px;line-height:1;
+  letter-spacing:.26em;text-indent:.26em;
+  text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 1px rgba(0,0,0,.35);
+}
+.cta--long span{font-size:20.5px;letter-spacing:.07em;text-indent:.07em}
+.cta--orange{--shell:url("assets/svg/btn-orange.svg")}
+.cta--teal{--shell:url("assets/svg/btn-teal.svg");
+  --ar:464.4/126.96;--mid:39.5%;--bezel:9.38% 8.94% 32.49% 2.50%}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.cta:active{transform:translateY(1px)}
+.cta:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+.cta-row{position:relative;z-index:3;display:flex;justify-content:center;padding:0;
+  animation:ctaBounce 2.6s ease-in-out infinite}
+.cta-row:nth-of-type(even){animation-delay:-0.9s}
+.cta-row:hover{animation-play-state:paused}
+/* attention pulse: a short double-bounce, then it rests — constant motion reads as noise */
+@keyframes ctaBounce{
+  0%,80%,100%{transform:translateY(0) scale(1)}
+  84%{transform:translateY(-10px) scale(1.035)}
+  88%{transform:translateY(0)     scale(1)}
+  91%{transform:translateY(-5px)  scale(1.015)}
+  94%{transform:translateY(0)     scale(1)}
+  96%{transform:translateY(-2px)  scale(1)}
+  98%{transform:translateY(0)     scale(1)}
+}
+@media (prefers-reduced-motion:reduce){.cta-row{animation:none}}
+
+/* ============================================================
+   1. ANNOUNCEMENT BAR
+   ============================================================ */
+.topbar{background:var(--navy);color:#fff;padding:13px 0;overflow:hidden}
+.ticker{position:relative;width:100%;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.ticker__track{display:flex;width:max-content;align-items:center;
+  animation:roll 30s linear infinite;will-change:transform}
+.ticker:hover .ticker__track{animation-play-state:paused}
+.ticker__item{display:inline-flex;align-items:center;gap:16px;padding:0 38px;white-space:nowrap}
+.ticker__item img{height:19px;width:auto}
+.ticker__item span{font-size:20px;letter-spacing:.04em;font-weight:500;line-height:1.35}
+.ticker__item b{color:var(--cyan-dim);font-weight:700}
+.ticker__dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex:none;opacity:.9}
+@keyframes roll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){
+  .ticker{-webkit-mask-image:none;mask-image:none}
+  .ticker__track{animation:none;width:100%;justify-content:center}
+  .ticker__item:not(:first-child){display:none}
+}
+
+/* ============================================================
+   2. HERO
+   ============================================================ */
+.hero{
+  position:relative;overflow:hidden;background:#0E1418;
+  padding:34px 0 0;
+}
+.hero__bg{
+  position:absolute;inset:0;
+  background:url("assets/img/hero-bg.jpg") center 28% / cover no-repeat;
+  filter:saturate(.85);
+}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,16,22,.62) 0%,rgba(10,16,22,.30) 42%,rgba(10,16,22,.55) 100%);
+}
+
+/* ---------- hero slideshow: 4 scenes, 3s each, 0.6s cross-fade ----------
+   --- HERO SPEED KNOB: 12s = 4 scenes x 3s. Change every 12s below to retime. --- */
+.hero__slide{
+  position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;
+  background:var(--img) center center / cover no-repeat;
+  filter:saturate(.85);
+  animation:heroCycle 12s linear infinite;
+}
+/* the new scenes carry their own white base strip, so this overlay has to release
+   before the bottom or the strip greys out and stops meeting .hero__fade cleanly */
+.hero__slide::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(10,16,22,.58) 0%,
+    rgba(10,16,22,.24) 45%,
+    rgba(10,16,22,.13) 72%,
+    rgba(10,16,22,0)   88%);
+}
+.hero__bg,.hero__boxes{animation:heroCycle 12s linear infinite;animation-delay:-.6s}
+.hero__slide--2{animation-delay:2.4s}
+.hero__slide--3{animation-delay:5.4s}
+.hero__slide--4{animation-delay:8.4s}
+@keyframes heroCycle{
+  0%{opacity:0}
+  5%,25%{opacity:1}
+  30%,100%{opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__slide{display:none}
+  .hero__bg,.hero__boxes{animation:none;opacity:1}
+}
+.hero .wrap{position:relative;z-index:3}
+.hero__logo{width:215px;margin:0 auto 24px}
+.hero__title{max-width:530px;margin:0 auto}
+.hero__sub{
+  margin:14px 0 0;text-align:center;
+  font-size:30px;font-weight:700;color:#fff;line-height:1.25;
+  text-shadow:0 3px 10px rgba(0,0,0,.6);
+}
+.hero__sub{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.hero__sub img{height:40px;width:auto}
+.hero__boxes{position:relative;z-index:2;width:100%;margin-top:-4px}
+.hero__fade{height:26px;background:linear-gradient(180deg,#EFF3F6 0%,#B8BFC9 100%)}
+
+/* ============================================================
+   3. 我们协助 (navy block)
+   ============================================================ */
+.help{
+  position:relative;
+  background:linear-gradient(180deg,#B8BFC9 0%,#0B3A63 7%,#002854 45%,#005E85 100%);
+  color:#fff;padding:34px 0 46px;overflow:hidden;
+}
+.help__title{width:480px;max-width:100%;margin:0 auto 12px}
+.help__h2{margin:0;text-align:center;font-size:44px;font-weight:700;letter-spacing:.16em;text-indent:.16em}
+.help__rule{width:150px;height:1px;background:rgba(255,255,255,.45);margin:18px auto 16px}
+.help__line{display:flex;align-items:center;justify-content:center;gap:12px;font-size:18px;flex-wrap:wrap}
+.help__line img{height:16px;width:auto}
+.pills{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:18px 0 24px}
+.pill{
+  position:relative;isolation:isolate;
+  font-family:var(--en);font-size:17px;font-weight:800;color:#F3F8F6;letter-spacing:.02em;
+  padding:10px 30px;border-radius:999px;
+  background:linear-gradient(180deg,#C9A24A 0%,#8A6A22 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 3px 10px -4px rgba(0,0,0,.6);
+}
+.pill span{font-family:var(--cn)}
+/* the blue rides on a negative-z ::before so it sits over the gold fill but under the
+   label — cross-fading two background-image gradients is not reliable everywhere */
+.pill::before{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;opacity:0;
+  background:linear-gradient(180deg,#5FD8EE 0%,#1C75BC 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45);
+  animation:pillSweep 6s ease-in-out infinite;
+}
+/* --- PILL SWEEP KNOB: 6s loop split into three 2s turns, one pill blue at a time.
+   Delays are 0 / 2s / 4s — keep them at thirds of whatever loop length you set. --- */
+.pill:nth-child(2)::before{animation-delay:2s}
+.pill:nth-child(3)::before{animation-delay:4s}
+@keyframes pillSweep{
+  0%{opacity:0}
+  4%,26%{opacity:1}       /* its turn: ~0.25s in, held to 1.56s */
+  31%,100%{opacity:0}     /* back to gold, then waits out the other two turns */
+}
+@media (prefers-reduced-motion:reduce){.pill::before{animation:none}}
+
+.help__stage{position:relative;margin-top:6px}
+.tiles{--g:8px;display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}
+
+/* the four tiles cycle clockwise around the 2x2 grid; each caption travels with
+   its own photo, so the labels always stay on the right industry.
+   offsets are calc(100% + gap) of the tile itself, so this stays exact at any width */
+.tile{animation:tileA 10s cubic-bezier(.65,0,.35,1) infinite}
+.tile:nth-child(2){animation-name:tileB}
+.tile:nth-child(3){animation-name:tileC}
+.tile:nth-child(4){animation-name:tileD}
+
+@keyframes tileA{           /* top-left  -> TR -> BR -> BL -> back */
+  0%,20%   {transform:translate(0,0)}
+  25%,45%  {transform:translate(calc(100% + var(--g)),0)}
+  50%,70%  {transform:translate(calc(100% + var(--g)),calc(100% + var(--g)))}
+  75%,95%  {transform:translate(0,calc(100% + var(--g)))}
+  100%     {transform:translate(0,0)}
+}
+@keyframes tileB{           /* top-right -> BR -> BL -> TL -> back */
+  0%,20%   {transform:translate(0,0)}
+  25%,45%  {transform:translate(0,calc(100% + var(--g)))}
+  50%,70%  {transform:translate(calc(-100% - var(--g)),calc(100% + var(--g)))}
+  75%,95%  {transform:translate(calc(-100% - var(--g)),0)}
+  100%     {transform:translate(0,0)}
+}
+@keyframes tileC{           /* bottom-left -> TL -> TR -> BR -> back */
+  0%,20%   {transform:translate(0,0)}
+  25%,45%  {transform:translate(0,calc(-100% - var(--g)))}
+  50%,70%  {transform:translate(calc(100% + var(--g)),calc(-100% - var(--g)))}
+  75%,95%  {transform:translate(calc(100% + var(--g)),0)}
+  100%     {transform:translate(0,0)}
+}
+@keyframes tileD{           /* bottom-right -> BL -> TL -> TR -> back */
+  0%,20%   {transform:translate(0,0)}
+  25%,45%  {transform:translate(calc(-100% - var(--g)),0)}
+  50%,70%  {transform:translate(calc(-100% - var(--g)),calc(-100% - var(--g)))}
+  75%,95%  {transform:translate(0,calc(-100% - var(--g)))}
+  100%     {transform:translate(0,0)}
+}
+@media (prefers-reduced-motion:reduce){.tile{animation:none}}
+.tile{position:relative;margin:0;border:1px solid rgba(255,255,255,.35);overflow:hidden;aspect-ratio:16/9;background:#0d2036}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile figcaption{
+  position:absolute;bottom:6px;left:8px;right:8px;
+  font-family:var(--en);font-size:13px;font-weight:600;color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.9);
+}
+.tile--r figcaption{text-align:right}
+.help__portrait{
+  position:absolute;z-index:1;left:50%;top:2px;bottom:auto;transform:translateX(-50%);
+  width:256px;height:auto;max-width:none;pointer-events:none;
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));
+}
+
+.creds{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:end;margin-top:6px;position:relative;z-index:3}
+.creds__sig{width:196px;max-width:100%;height:auto;display:block;margin:0 0 10px}
+.creds__role{font-family:var(--en);font-size:13px;line-height:1.5;color:#fff;margin:0}
+.creds__right{text-align:right}
+.creds__right img{width:52px;margin:0 0 10px auto}
+.creds__right p{font-family:var(--en);font-size:13px;line-height:1.5;margin:0 0 10px;text-wrap:balance}
+.creds__spacer{width:262px}
+
+.help__badge{position:relative;z-index:3;width:410px;max-width:100%;margin:22px auto 12px}
+.help__stats{position:relative;z-index:3;margin:0;text-align:center;font-size:19px;font-weight:500;
+  line-height:1.6;letter-spacing:.02em;white-space:nowrap}
+.help__stats b{font-family:var(--en);font-weight:800}
+.help .cta-row{margin-top:22px}
+
+/* ============================================================
+   4. 只需4步骤 (steps)
+   ============================================================ */
+.steps{
+  background:linear-gradient(180deg,#D8EBF2 0%,#C4E2EA 45%,#B8D9E4 100%);
+  padding:44px 0 48px;position:relative;overflow:hidden;
+}
+.steps__eyebrow{margin:0;text-align:center;font-size:26px;font-weight:700;letter-spacing:.02em}
+.steps__eyebrow .o{color:var(--orange)}
+.steps__eyebrow .n{color:var(--navy-deep)}
+.steps__amount{width:430px;max-width:100%;margin:4px auto 2px}
+.steps__sub{margin:0 0 34px;text-align:center;font-size:24px;font-weight:700;color:var(--navy);letter-spacing:.14em}
+
+.stepgrid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px 46px}
+.step{
+  position:relative;z-index:2;background:var(--paper);padding:11px 11px 20px;
+  box-shadow:0 14px 28px -16px rgba(20,40,60,.55),0 2px 6px rgba(20,40,60,.12);
+  border-radius:2px;
+}
+.step:nth-of-type(1){transform:rotate(-1.6deg)}
+.step:nth-of-type(2){transform:rotate(1.4deg);margin-top:44px}
+.step:nth-of-type(3){transform:rotate(-1.2deg)}
+.step:nth-of-type(4){transform:rotate(1.8deg);margin-top:44px}
+.step__photo{width:100%;aspect-ratio:12/5;object-fit:cover;opacity:.94}
+.step__pin{
+  position:absolute;top:-19px;left:22px;
+  width:30px;height:auto;min-height:0;aspect-ratio:auto;
+  transform:rotate(-8deg);transform-origin:50% 90%;
+  filter:drop-shadow(0 6px 7px rgba(0,0,0,.4));
+}
+.stepline{
+  position:absolute;z-index:1;pointer-events:none;height:4px;
+  background:repeating-linear-gradient(90deg,#223046 0 13px,transparent 13px 26px);
+  transform-origin:0 0;
+}
+.stepline--0{left:-36px;              top:12%;    width:36px}
+.stepline--1{left:calc(50% - 23px);   top:14%;    width:46px}
+.stepline--2{left:56%;  top:47%;   width:125px; transform:rotate(146deg)}
+.stepline--3{left:45%;  top:73%;   width:112px; transform:rotate(38deg)}
+.stepline--4{left:56%;  top:100.5%;width:74px;  transform:rotate(134deg)}
+.stepline--4::after{
+  content:"";position:absolute;right:-7px;top:-6px;
+  width:15px;height:15px;
+  border-right:4px solid #223046;border-bottom:4px solid #223046;
+  transform:rotate(-45deg);
+}
+.step__no{font-family:var(--en);font-size:13.5px;font-weight:900;color:var(--orange);margin:14px 0 4px;letter-spacing:.04em}
+.step__name{font-family:var(--cn);font-size:16px;font-weight:700;color:var(--navy);margin:0 0 8px;line-height:1.4;text-wrap:balance}
+.step__desc{margin:0;font-size:12.5px;line-height:1.8;color:#33405C;font-weight:400}
+.steps .cta-row{margin-top:40px}
+
+/* ============================================================
+   5. CAPBOOST feature card
+   ============================================================ */
+.feature{
+  background:
+    linear-gradient(180deg,rgba(24,57,94,1) 0%,rgba(24,57,94,.92) 26%,rgba(222,224,222,.94) 62%,#DEE0DE 100%),
+    url("assets/img/bg-paper.jpg") center / cover;
+  padding:34px 0 44px;
+}
+.feature__logo{width:300px;margin:0 auto 10px}
+.feature__kicker{margin:0 0 26px;text-align:center;font-size:23px;font-weight:700;color:#F7FCFC;letter-spacing:.34em;text-indent:.34em}
+.fcard{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:#F7FCFC;border-radius:26px;overflow:hidden;
+  box-shadow:0 22px 40px -22px rgba(10,30,50,.6);
+}
+.fcard__photo{width:100%;height:100%;object-fit:cover;min-height:220px}
+.fcard ul{list-style:none;margin:0;padding:28px 30px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.fcard li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;color:var(--navy);
+  opacity:0;transform:translateX(-12px);transition:opacity .26s ease,transform .26s cubic-bezier(.2,.7,.3,1)}
+.fcard.in li{opacity:1;transform:none}
+.fcard.in li:nth-child(1){transition-delay:.04s}
+.fcard.in li:nth-child(2){transition-delay:.12s}
+.fcard.in li:nth-child(3){transition-delay:.20s}
+.fcard.in li:nth-child(4){transition-delay:.28s}
+.fcard.in li:nth-child(5){transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.fcard li{opacity:1;transform:none;transition:none}}
+.fcard li img{width:19px;height:19px;flex:none}
+.feature .cta-row{margin-top:30px}
+
+/* ============================================================
+   6. 成功案例
+   ============================================================ */
+.cases{
+  background:linear-gradient(180deg,#FFFFFF 0%,#E8F1FA 14%,#215FAD 34%,#1B559E 70%,#195196 100%);
+  padding:36px 0 46px;
+}
+.cases__title{width:340px;max-width:100%;margin:0 auto 6px}
+.cases__sub{margin:0 0 22px;text-align:center;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.24em;text-indent:.24em}
+.cases__video{width:100%;max-width:620px;margin:0 auto 26px;border-radius:12px;overflow:hidden;
+  box-shadow:0 20px 40px -24px rgba(0,0,0,.75)}
+.cases__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0A1B33}
+.caselist{display:flex;flex-direction:column;gap:18px}
+/* light card, per the designer's Facility Management reference: photo left, white body
+   right, gold stars between navy rules, navy headline, orange for the pain line */
+.case{
+  display:grid;grid-template-columns:45% 1fr;
+  border:1px solid rgba(255,255,255,.55);border-radius:4px;overflow:hidden;
+  box-shadow:0 18px 34px -20px rgba(0,0,0,.6);
+}
+.case__media{position:relative;overflow:hidden;min-height:186px;background:#123}
+.case__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.case__body{background:#fff;padding:20px 24px;color:#2A2E3A;display:flex;flex-direction:column;justify-content:center}
+.case__stars{display:flex;justify-content:center;align-items:center;gap:6px;margin-bottom:10px}
+.case__stars i{width:13px;height:13px;background:var(--gold);
+  clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.case__stars::before,.case__stars::after{content:"";height:1.5px;width:46px;background:#17235E;opacity:.85}
+.case__name{font-family:var(--en);font-size:18px;font-weight:900;color:#17235E;text-align:center;
+  margin:0 0 12px;line-height:1.3;text-wrap:balance}
+.case__name .city{font-weight:800;color:#17235E}
+.case__text{margin:0;font-size:13px;line-height:2;text-align:center;font-weight:400;color:#2A2E3A}
+.case__text .o{color:var(--orange);font-weight:800}
+.case__text .g{color:#17235E;font-weight:800}
+.case__text .logo{height:15px;width:auto;min-height:0;display:inline-block;vertical-align:-2px;margin:0 5px}
+.cases .cta-row{margin-top:32px}
+
+
+/* ============================================================
+   6b. 短片 (9:16 shorts)
+   ============================================================ */
+.shorts{
+  background:linear-gradient(180deg,#195196 0%,#1A5391 34%,#5E96C2 78%,#B7D8E4 100%);
+  padding:40px 0 46px;
+}
+/* gold artwork, sized against its ink like the other headlines. Width is set so the
+   GLYPH HEIGHT matches 常见问题: that art is 4.096:1 at 300px = 73.2px tall, this one is
+   6.230:1, so 73.2 x 6.230 = 456px. Six characters vs four, so equal height means a
+   wider box — match on height, never on width. */
+.shorts__h2{width:456px;max-width:100%;margin:0 auto 8px}
+.shorts__sub{margin:0 0 28px;text-align:center;font-family:var(--en);font-size:15px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:#BFE4F5}
+.shortsrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.short{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#0A1B33;
+  box-shadow:0 18px 34px -20px rgba(0,0,0,.85);border:1px solid rgba(255,255,255,.16)}
+.short video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#0A1B33}
+.shorts .cta-row{margin-top:32px}
+@media (max-width:680px){
+  /* a snap-scroll strip reads better than three tall clips stacked */
+  .shortsrow{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding-bottom:8px;margin:0 calc(var(--pad) * -1);padding-inline:var(--pad);
+    scrollbar-width:none}
+  .shortsrow::-webkit-scrollbar{display:none}
+  .short{flex:0 0 66%;scroll-snap-align:center}
+  .shorts__h2{width:380px}   /* pairs with .faq__title 250px below = 61px glyph height */
+  .shorts__sub{font-size:13px;margin-bottom:20px}
+}
+
+/* ============================================================
+   7. FAQ
+   ============================================================ */
+.faq{
+  background:linear-gradient(180deg,#B7D8E4 0%,#F7FBFC 40%,#EEF7FB 70%,#E7F4FA 100%);
+  padding:34px 0 46px;
+}
+.faq__title{width:300px;max-width:100%;margin:0 auto 2px}
+.faq__h2{margin:0 0 32px;text-align:center;font-family:var(--en);font-size:26px;font-weight:600;color:var(--navy-deep)}
+.faqgrid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:26px 24px;padding-bottom:38px}
+.faqgrid > *:nth-child(even){transform:translateY(38px)}
+.qa{position:relative;height:100%;background:#fff;border-radius:12px;padding:40px 22px 26px;
+  box-shadow:0 14px 26px -18px rgba(20,50,70,.55),0 1px 3px rgba(20,50,70,.08);
+  min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center}
+.qa__q{
+  position:absolute;top:-19px;left:18px;max-width:calc(100% - 36px);
+  background:linear-gradient(180deg,#FF7A2B 0%,#F04E00 100%);
+  color:#fff;font-size:15.5px;font-weight:700;letter-spacing:.04em;
+  padding:9px 18px;border-radius:9px;
+  box-shadow:0 6px 12px -6px rgba(240,78,0,.8);
+}
+.qa__q::after{content:"";position:absolute;left:22px;bottom:-6px;width:13px;height:13px;
+  background:#F04E00;transform:rotate(45deg) skew(6deg,6deg);border-radius:0 0 3px 0}
+.qa__a{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink);font-weight:500}
+.qa__a .b{color:var(--blue);font-weight:700}
+.qa__a .o{color:var(--orange);font-weight:700}
+.qa__note{display:inline-block;margin-top:6px;font-size:12.5px;color:#5A6675;font-weight:500}
+.faq .cta-row{margin-top:36px}
+
+/* ============================================================
+   8. LEAD FORM
+   ============================================================ */
+.lead{
+  background:linear-gradient(180deg,#5C4B26 0%,#8A7238 30%,#B99C48 62%,#DDBA54 100%);
+  padding:44px 0 48px;color:#fff;
+}
+.lead__hand{margin:0;text-align:center;font-family:var(--hand);font-size:44px;line-height:1.1;
+  text-shadow:0 3px 12px rgba(0,0,0,.35)}
+.lead__title{width:460px;max-width:100%;margin:4px auto 0}
+.lead__rule{width:190px;height:1px;background:rgba(255,255,255,.55);margin:16px auto}
+.lead__hand2{margin:0 0 30px;text-align:center;font-family:var(--hand);font-size:28px;letter-spacing:.1em;
+  text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:.02em;
+  text-shadow:0 1px 2px rgba(0,0,0,.55), 0 3px 10px rgba(0,0,0,.40);}
+.field label .en{font-family:var(--en);font-weight:600;font-size:15px;opacity:1;margin-left:7px}
+.field input,.field select{
+  width:100%;padding:11px 14px;border:none;border-radius:8px;
+  font-family:var(--cn);font-size:15px;color:var(--ink);background:#fff;
+  box-shadow:0 3px 10px -4px rgba(0,0,0,.4);
+}
+.field input::placeholder{color:var(--muted)}
+.field input:focus-visible,.field select:focus-visible{outline:3px solid rgba(255,255,255,.85);outline-offset:2px}
+.lead .cta-row{margin-top:30px}
+.formnote{margin:14px 0 0;text-align:center;font-size:12.5px;min-height:18px;font-weight:700}
+.formnote.ok{color:#0B3D14}
+.formnote.err{color:#5C0000}
+
+/* ============================================================
+   9. FOOTER
+   ============================================================ */
+.social{background:#fff;padding:14px 0}
+.social .wrap{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.social p{margin:0;font-size:14px;font-weight:700;color:#111212;letter-spacing:.02em}
+.social__icons{display:flex;gap:10px}
+.social__icons a{display:block;width:23px;transition:transform .18s ease}
+.social__icons img{width:100%;height:auto}
+.social__icons a:hover{transform:translateY(-2px)}
+.social__icons a:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:50%}
+.disclaimer{background:#0F1110;color:#fff;padding:10px 0;text-align:center}
+.disclaimer p{margin:0;font-family:var(--en);font-size:10.5px;line-height:1.5;opacity:.9}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:680px){
+  :root{--pad:18px}
+  .ticker__item span{font-size:17px}
+  .ticker__item img{height:16px}
+  .ticker__item{padding:0 24px;gap:12px}
+  .ticker__track{animation-duration:24s}
+  .hero{padding-top:24px}
+  /* the plates are 2.08:1, so a phone crops ~40% off the sides — pull each frame
+     toward its subject (measured off the cutout's alpha bbox) so nobody loses a head */
+  .hero__slide--3{background-position:58% center}
+  .hero__slide--4{background-position:82% center}
+  .hero__logo{width:165px;margin-bottom:18px}
+  .hero__sub{font-size:22px;gap:9px}
+  .hero__sub img{height:29px}
+  .help__h2{font-size:29px;letter-spacing:.12em;text-indent:.12em}
+  .help__title{width:300px;margin:0 auto 8px}
+  .help__line{font-size:15px}
+  .help__line img{height:13px}
+  .help__badge{width:320px}
+  .cases__sub{font-size:18px;letter-spacing:.16em;text-indent:.16em}
+  .help__stats{font-size:13.5px;letter-spacing:0}
+  .help__portrait{width:148px;height:auto;top:2px;bottom:auto}
+  .tile figcaption{font-size:9.5px;line-height:1.25;bottom:5px;left:6px;right:6px}
+  .pills{gap:8px;margin-bottom:16px}
+  .pill{font-size:13px;padding:6px 16px}
+  .creds{grid-template-columns:1fr 1fr;gap:8px}
+  .creds__spacer{display:none}
+  .creds__sig{width:150px}
+  .creds__role,.creds__right p{font-size:11.5px}
+  .creds__right img{width:44px}
+  .steps__eyebrow{font-size:20px}
+  .steps__sub{font-size:18px;margin-bottom:26px}
+  .stepgrid{grid-template-columns:1fr;gap:22px}
+  .step:nth-of-type(n){transform:none;margin-top:0}
+  .stepline{display:none}
+  /* on a phone the photo becomes a thumbnail so the copy leads */
+  .step{display:grid;grid-template-columns:118px 1fr;column-gap:14px;
+    align-items:start;padding:14px 15px 16px}
+  .step__photo{grid-column:1;grid-row:1 / span 3;aspect-ratio:1/1;border-radius:3px}
+  .step__no{grid-column:2;margin:0 0 3px;font-size:13px}
+  .step__name{grid-column:2;font-size:16.5px;margin:0 0 6px;line-height:1.35}
+  .step__desc{grid-column:2;font-size:13.5px;line-height:1.75}
+  .step__pin{top:-15px;left:14px;width:26px}
+  .fcard{grid-template-columns:1fr}
+  .fcard__photo{min-height:180px}
+    .case{grid-template-columns:1fr}
+  /* photo drops to a slim banner so the story leads; a narrow side-by-side column
+     would squeeze this much Chinese copy to ~16 characters a line */
+  .case__media{min-height:0;aspect-ratio:16/4}
+  .case__body{padding:16px 18px 18px}
+  .case__stars{margin-bottom:7px}
+  .case__stars i{width:11px;height:11px}
+  .case__stars::before,.case__stars::after{width:34px}
+  .case__name{font-size:16px;margin-bottom:8px}
+  .case__text{font-size:13.5px;line-height:1.95}
+  .case__text .logo{height:14px}
+  .faqgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:30px;padding-bottom:0}
+  .qa__q{font-size:14px;padding:8px 15px}
+  .qa{min-height:0}
+  .faqgrid > *:nth-child(even){transform:none}
+  .faq__title{width:250px}
+  .faq__h2{font-size:20px}
+  .field label{font-size:15px}
+  .field label .en{font-size:13.5px;margin-left:5px}
+  .lead__hand{font-size:34px}
+  .lead__hand2{font-size:22px}
+  .cta{max-width:100%}
+  .cta span{font-size:18px;letter-spacing:.16em;text-indent:.16em}
+  .cta--long span{font-size:16px;letter-spacing:.06em;text-indent:.06em}
+  .social .wrap{flex-direction:column;gap:10px}
+  .social p{font-size:12.5px;text-align:center}
+}
+@media (max-width:400px){
+  .faq__title{width:210px}
+  .shorts__h2{width:320px}   /* both = 51px glyph height */
+  .help__portrait{width:126px}
+  .hero__sub{font-size:19px}
+  .hero__sub img{height:21px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== 1. ANNOUNCEMENT BAR ========== -->
+<header class="topbar">
+  <div class="ticker">
+    <div class="ticker__track">
+      <div class="ticker__item"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 2. HERO ========== -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__slide hero__slide--2" aria-hidden="true" style="--img:url('assets/img/hero-2-construction.jpg')"></div>
+  <div class="hero__slide hero__slide--3" aria-hidden="true" style="--img:url('assets/img/hero-3-factory.jpg')"></div>
+  <div class="hero__slide hero__slide--4" aria-hidden="true" style="--img:url('assets/img/hero-4-warehouse.jpg')"></div>
+  <div class="wrap">
+    <img class="hero__logo" src="assets/svg/logo-nexus.svg" alt="Nexus Capital">
+    <h1 class="hero__title"><img src="assets/img/title-hero.png" alt="项目 / 订单已到手"></h1>
+    <p class="hero__sub">却总是差一点 <img src="assets/img/cashflow.png" alt="Cash Flow ?"></p>
+  </div>
+  <img class="hero__boxes" src="assets/img/hero-boxes.png" alt="" aria-hidden="true">
+</section>
+
+<!-- ========== 3. 我们协助 ========== -->
+<section class="help">
+  <div class="wrap">
+    <img class="help__title rv" src="assets/img/title-we-help.png" alt="我们协助">
+    <h2 class="help__h2 rv">企业解决资金需求</h2>
+    <div class="help__rule"></div>
+    <div class="help__line rv">
+      <img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST">
+      <span>生意发展资金，符合企业增强</span>
+    </div>
+    <div class="pills rv">
+      <span class="pill">Working Capital</span>
+      <span class="pill">Project Funding</span>
+      <span class="pill">Cash Flow <span>周转</span></span>
+    </div>
+
+    <div class="help__stage">
+      <div class="tiles rv">
+        <figure class="tile"><img src="assets/img/ind-construction.jpg" alt="Construction / Engineering"><figcaption>Construction / Engineering</figcaption></figure>
+        <figure class="tile tile--r"><img src="assets/img/ind-manufacturing.jpg" alt="Manufacturing"><figcaption>Manufacturing</figcaption></figure>
+        <figure class="tile"><img src="assets/img/ind-logistics.jpg" alt="Logistics"><figcaption>Logistics</figcaption></figure>
+        <figure class="tile tile--r"><img src="assets/img/ind-trading.jpg" alt="Trading"><figcaption>Trading</figcaption></figure>
+      </div>
+      <img class="help__portrait" src="assets/img/chloe.png" alt="Chloe Ooi, Co-Founder of Nexus Capital">
+    </div>
+
+    <div class="creds">
+      <div>
+        <img class="creds__sig" src="assets/svg/signature-chloe.svg" alt="Chloe Ooi">
+        <p class="creds__role">Co-Founder<br>of Nexus Capital</p>
+      </div>
+      <div class="creds__spacer" aria-hidden="true"></div>
+      <div class="creds__right">
+        <img src="assets/svg/badge-aicb.svg" alt="Asian Institute of Chartered Bankers">
+        <p>Certificate in Credit by<br>Asian Institute of Chartered Bankers (AICB)</p>
+        <p>Affiliate Member of<br>Asian Institute of Chartered Bankers (AICB)</p>
+      </div>
+    </div>
+
+    <img class="help__badge rv" src="assets/img/badge-9years.png" alt="9年+ SME 融资经验">
+    <p class="help__stats rv">帮助超过 <b>3,000+</b> 企业老板获得 <b>500M+</b> 融资</p>
+    <div class="cta-row"><a class="cta cta--orange" href="#lead"><span>我想了解资金方案！</span></a></div>
+  </div>
+</section>
+
+<!-- ========== 4. 只需4步骤 ========== -->
+<section class="steps">
+  <div class="wrap">
+    <p class="steps__eyebrow rv"><span class="o">只需 4 步骤</span> <span class="n">获得</span></p>
+    <img class="steps__amount rv" src="assets/img/title-rm2m.png" alt="RM2,000,000">
+    <p class="steps__sub rv">的生意资金</p>
+
+    <div class="stepgrid">
+      <span class="stepline stepline--0" aria-hidden="true"></span>
+      <span class="stepline stepline--1" aria-hidden="true"></span>
+      <span class="stepline stepline--2" aria-hidden="true"></span>
+      <span class="stepline stepline--3" aria-hidden="true"></span>
+      <span class="stepline stepline--4" aria-hidden="true"></span>
+      <article class="step rv">
+        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img class="step__photo" src="assets/img/step-01.jpg" alt="">
+        <p class="step__no">Step 01</p>
+        <p class="step__name">提交资料，免费评估申请资格</p>
+        <p class="step__desc">提交基本公司资料与相关文件，由专业顾问全程跟进。所有资料将依据《个人资料保护法令》（PDPA）严格保密。</p>
+      </article>
+      <article class="step rv">
+        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img class="step__photo" src="assets/img/step-02.jpg" alt="">
+        <p class="step__no">Step 02</p>
+        <p class="step__name">获取初步融资方案</p>
+        <p class="step__desc">通过初步评估后，我们将提供建议融资额度与方案，并协助您准备及提交所需的补充文件。</p>
+      </article>
+      <article class="step rv">
+        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img class="step__photo" src="assets/img/step-03.jpg" alt="">
+        <p class="step__no">Step 03</p>
+        <p class="step__name">安排企业实地考察</p>
+        <p class="step__desc">专业团队将进行 Site Visit，深入了解您的业务营运、资金需求及还款能力。</p>
+      </article>
+      <article class="step rv">
+        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img class="step__photo" src="assets/img/step-04.jpg" alt="">
+        <p class="step__no">Step 04</p>
+        <p class="step__name">批准、签约及融资到账</p>
+        <p class="step__desc">申请获批并完成合同签署后，融资款项最快可于 3 个工作日内到账。</p>
+      </article>
+    </div>
+
+    <div class="cta-row"><a class="cta cta--long" href="#lead"><span>立即对接融资顾问</span></a></div>
+  </div>
+</section>
+
+<!-- ========== 5. CAPBOOST feature card ========== -->
+<section class="feature">
+  <div class="wrap">
+    <img class="feature__logo rv" src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST">
+    <p class="feature__kicker rv">生意发展资金</p>
+    <div class="fcard rv">
+      <img class="fcard__photo" src="assets/img/consultation.jpg" alt="融资顾问与客户咨询">
+      <ul>
+        <li><img src="assets/svg/icon-check.svg" alt="">根据企业状况规划融资方案</li>
+        <li><img src="assets/svg/icon-check.svg" alt="">提供实际可行的融资选择</li>
+        <li><img src="assets/svg/icon-check.svg" alt="">专属顾问一对一全程跟进</li>
+        <li><img src="assets/svg/icon-check.svg" alt="">简化流程，提高申请效率</li>
+        <li><img src="assets/svg/icon-check.svg" alt="">清楚透明，不盲目申请</li>
+      </ul>
+    </div>
+    <div class="cta-row"><a class="cta" href="#lead"><span>点击申请生意资金</span></a></div>
+  </div>
+</section>
+
+<!-- ========== 6. 成功案例 ========== -->
+<section class="cases">
+  <div class="wrap">
+    <img class="cases__title rv" src="assets/img/title-cases.png" alt="成功案例">
+    <p class="cases__sub rv">一切都因我们而改变</p>
+    <div class="cases__video rv">
+      <video
+        src="assets/video/team.mp4"
+        poster="assets/img/team-video-poster.jpg"
+        autoplay muted loop playsinline controls preload="auto"
+        aria-label="Nexus Capital CTOS Event Highlight"></video>
+    </div>
+
+    <div class="caselist">
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-construction.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">Construction Company, <span class="city">Kepong</span></h3>
+          <p class="case__text">三个月前 Encik Siva <span class="o">Bid 到 RM40 Mil</span> 的政府 Project，因为银行迟迟没有批 Project Financing，导致差点延误开工。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> 并在 <span class="g">7 天内拿到 RM1.5 Mil 启动资金</span>，让项目顺利开跑。</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-trading.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">Trading Company, <span class="city">Subang Jaya</span></h3>
+          <p class="case__text">Mr Yeo 的 Machinery 公司一年 Turnover 至少 RM6mil。由于 <span class="o">Main Supplier 要求提早清完货款才出货</span>，导致公司资金链受影响。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> 并在完成 Site Visit 后的 <span class="g">3 天内拿到 RM1.2mil 的周转资金</span>。</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-manufacturing.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">Manufacturing Company, <span class="city">Nilai</span></h3>
+          <p class="case__text">Mr Lim 的公司专门生产 Automotive Plastic Components。临时接到 MNC 的大订单，因产能不足，<span class="o">需要增加两条 Production Lines</span> 才能按时交货。我们帮他 <span class="g">7 天内批出 RM2 Million</span> <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">资金</span>，让新生产线及时投入生产。</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-it.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">IT Company, <span class="city">Johor</span></h3>
+          <p class="case__text">William 经营 IT System Integrator 生意，近期接到 <span class="o">RM5 Mil 的 MNC Project</span>。PO 已经确认，但 Supplier 要求先付款，公司却要等客户完成 Project milestone 后才能收款。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST">，<span class="g">先解决前期 Supplier Payment</span>，让公司可以按计划采购和启动 Project。</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-healthcare.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">Healthcare Company, <span class="city">Penang</span></h3>
+          <p class="case__text">Encik Farid 的 Healthcare Supplies 公司在上两个月前接到大型紧急订单，但 <span class="o">前期采购资金不足</span>，差点影响交货进度。我们协助申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">RM800K</span>，在 <span class="g">8 天内解决短期资金缺口</span>，让订单顺利完成。</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case__media"><img src="assets/img/case-facility.jpg" alt=""></div>
+        <div class="case__body">
+          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
+          <h3 class="case__name">Facility Management Company, <span class="city">Perak</span></h3>
+          <p class="case__text">Mr Chua 今年拿下 RM6 Mil 的 3-year Contract，新项目需要一次性增加 80 名员工。但公司现有项目的 <span class="o">Cash Flow 还在周转中</span>，手上的资金一时不够。我们协助申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">RM600K</span>，解决新项目的启动资金。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="cta-row"><a class="cta cta--teal" href="#lead"><span>我想查看申请资格！</span></a></div>
+  </div>
+</section>
+
+
+<!-- ========== 6b. 短片 ========== -->
+<section class="shorts">
+  <div class="wrap">
+    <img class="shorts__h2 rv" src="assets/img/title-insights.png" alt="融资知识分享">
+    <p class="shorts__sub rv">Financing Insights</p>
+    <div class="shortsrow">
+      <figure class="short rv"><video src="assets/video/short-1.mp4" poster="assets/img/short-1-poster.jpg" playsinline controls preload="none" aria-label="融资短片 1"></video></figure>
+      <figure class="short rv"><video src="assets/video/short-2.mp4" poster="assets/img/short-2-poster.jpg" playsinline controls preload="none" aria-label="融资短片 2"></video></figure>
+      <figure class="short rv"><video src="assets/video/short-3.mp4" poster="assets/img/short-3-poster.jpg" playsinline controls preload="none" aria-label="融资短片 3"></video></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. FAQ ========== -->
+<section class="faq">
+  <div class="wrap">
+    <img class="faq__title rv" src="assets/img/title-faq.png" alt="常见问题">
+    <h2 class="faq__h2 rv">Frequently Asked Question</h2>
+
+    <div class="faqgrid">
+      <div class="qa rv">
+        <span class="qa__q">什么企业适合申请？</span>
+        <p class="qa__a">运营<span class="o">至少 2 年</span>，有<span class="o">项目 / 订单在进行中</span>的企业。<br>
+        <span class="qa__note">（<span class="b">Construction</span>、<span class="b">Manufacturing</span>、<span class="b">Trading</span>、<span class="b">Logistic</span>、<span class="b">IT</span> 都可以申请）</span></p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">最低营业额多少？</span>
+        <p class="qa__a"><span class="o">至少 RM5 Million 或以上</span>。</p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">需要抵押吗？</span>
+        <p class="qa__a"><span class="o">无需抵押</span>。</p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">这个融资方案是否合法合规？</span>
+        <p class="qa__a">我们提供符合 <span class="b">Shariah principles</span>（<span class="b">Shariah-compliant financing</span>）的融资方案。</p>
+      </div>
+    </div>
+
+    <div class="cta-row"><a class="cta" href="#lead"><span>点击申请生意资金</span></a></div>
+  </div>
+</section>
+
+<!-- ========== 8. LEAD FORM ========== -->
+<section class="lead" id="lead">
+  <div class="wrap">
+    <p class="lead__hand rv">生意要冲！</p>
+    <img class="lead__title rv" src="assets/img/title-form.png" alt="资金先到位">
+    <div class="lead__rule"></div>
+    <p class="lead__hand2 rv">一步到位获得融资</p>
+
+    <form id="leadForm" novalidate>
+      <div class="field">
+        <label for="f_company">公司名称<span class="en">Company Name:</span></label>
+        <input id="f_company" name="company" type="text" placeholder="Fill text here.." required autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="f_name">姓名<span class="en">Your Full Name:</span></label>
+        <input id="f_name" name="name" type="text" placeholder="Fill text here.." required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f_phone">联系方式<span class="en">Contact Number:</span></label>
+        <input id="f_phone" name="phone" type="tel" inputmode="tel" placeholder="Fill text here.." required autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="f_years">公司运营多久<span class="en">How long has your company been operating?</span></label>
+        <input id="f_years" name="years" type="text" placeholder="Fill text here.." required>
+      </div>
+      <div class="field">
+        <label for="f_industry">从事行业<span class="en">What best describes your business?</span></label>
+        <input id="f_industry" name="industry" type="text" placeholder="Fill text here.." required>
+      </div>
+      <div class="field">
+        <label for="f_amount">寻找的资金金额<span class="en">How much financing do you need?</span></label>
+        <input id="f_amount" name="amount" type="text" placeholder="Fill text here.." required>
+      </div>
+
+      <div class="cta-row"><button class="cta cta--long" type="submit" id="submitBtn"><span>一键领取你的资金方案</span></button></div>
+      <p class="formnote" id="formNote" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ========== 9. FOOTER ========== -->
+<div class="social">
+  <div class="wrap">
+    <p>老板不可错过的融资好康！ 关注以下平台获取最新资讯！</p>
+    <div class="social__icons">
+      <a href="#" aria-label="Facebook"><img src="assets/img/soc-facebook.png" alt=""></a>
+      <a href="#" aria-label="Instagram"><img src="assets/img/soc-instagram.png" alt=""></a>
+      <a href="#" aria-label="TikTok"><img src="assets/img/soc-tiktok.png" alt=""></a>
+      <a href="#" aria-label="小红书"><img src="assets/img/soc-xiaohongshu.png" alt=""></a>
+    </div>
+  </div>
+</div>
+<div class="disclaimer">
+  <div class="wrap"><p>*All Figures, Interest Rates, And Payment Calculations Displayed On This Website Are Estimates For Reference Purposes Only.</p></div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — paste your Google Apps Script Web App URL here.
+   Deploy > New deployment > Web app > Execute as: Me,
+   Who has access: Anyone. Copy the /exec URL below.
+   ============================================================ */
+var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+/* ---------- reveal on scroll ---------- */
+(function () {
+  var els = document.querySelectorAll(".rv");
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    els.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+/* ---------- only one video plays at a time ---------- */
+(function () {
+  var vids = document.querySelectorAll("video");
+  vids.forEach(function (v) {
+    v.addEventListener("play", function () {
+      vids.forEach(function (o) { if (o !== v && !o.paused) o.pause(); });
+    });
+  });
+})();
+
+/* ---------- lead form ---------- */
+(function () {
+  var form = document.getElementById("leadForm");
+  var note = document.getElementById("formNote");
+  var btn  = document.getElementById("submitBtn");
+  if (!form) return;
+
+  function say(msg, kind) {
+    note.textContent = msg;
+    note.className = "formnote" + (kind ? " " + kind : "");
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+
+    var missing = [];
+    Array.prototype.forEach.call(form.querySelectorAll("[required]"), function (i) {
+      if (!i.value.trim()) missing.push(i);
+    });
+    if (missing.length) {
+      say("请填写所有栏位后再提交。", "err");
+      missing[0].focus();
+      return;
+    }
+
+    var data = {
+      company:   form.company.value.trim(),
+      name:      form.name.value.trim(),
+      phone:     form.phone.value.trim(),
+      years:     form.years.value.trim(),
+      industry:  form.industry.value.trim(),
+      amount:    form.amount.value.trim(),
+      source:    "CAPBOOST B2 Desktop Landing",
+      page:      location.href,
+      submitted: new Date().toISOString()
+    };
+
+    btn.disabled = true;
+    var original = btn.textContent;
+    btn.textContent = "提交中…";
+    say("");
+
+    if (SHEET_ENDPOINT.indexOf("PASTE_") === 0) {
+      console.warn("SHEET_ENDPOINT is not configured — logging payload instead.", data);
+      btn.disabled = false; btn.textContent = original;
+      say("尚未设置提交网址（见 index.html 的 SHEET_ENDPOINT）。", "err");
+      return;
+    }
+
+    fetch(SHEET_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(data)
+    }).then(function () {
+      form.reset();
+      btn.textContent = original;
+      btn.disabled = false;
+      say("已收到！我们的融资顾问会尽快联系您。", "ok");
+      /* Meta Pixel / GA4 conversion hooks — uncomment when installed
+      if (window.fbq) fbq("track", "Lead");
+      if (window.gtag) gtag("event", "generate_lead");
+      */
+    }).catch(function () {
+      btn.textContent = original;
+      btn.disabled = false;
+      say("提交失败，请稍后再试或直接 WhatsApp 我们。", "err");
+    });
+  });
+})();
+</script>
+</body>
+</html>
