@@ -14,20 +14,47 @@ apps-script/Code.gs     Google Apps Script that writes leads into a Sheet
 
 ## 1. Hook up the form (do this first)
 
-The form does nothing until you point it at a Google Apps Script endpoint.
+Two values at the top of the `<script>` block at the bottom of `index.html`:
 
-1. Open `apps-script/Code.gs` and follow the setup comment at the top —
-   it walks through creating the Web App and getting an `/exec` URL.
-2. Open `index.html`, scroll to the bottom `<script>` block, and replace:
+```js
+var SHEET_ENDPOINT  = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+var WHATSAPP_NUMBER = "PASTE_YOUR_WHATSAPP_NUMBER_HERE";
+```
 
-   ```js
-   var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
-   ```
+**The sheet.** `apps-script/Code.gs` is already pointed at your leads
+spreadsheet (`1hvcujP0Fh…`, tab gid `1006515679`) and writes the 14 columns
+that are already in it, in that order. Open <https://script.google.com>, paste
+the file into a new project, run `checkSetup()` once to approve permissions —
+it logs which tab it found and how many rows are there — then
+**Deploy > New deployment > Web app**, *Execute as: Me*, *Who has access:
+Anyone*, and paste the `/exec` URL into `SHEET_ENDPOINT`.
 
-   with your URL.
+It targets the sheet by ID, so the script does **not** need to live inside the
+spreadsheet, and it finds the tab by **gid, not name** — renaming the tab won't
+break it. If the gid ever goes missing it falls back to the first tab and logs a
+warning rather than dropping the lead.
 
-Until you do, submitting shows an error and logs the payload to the browser
-console — so you can still test the rest of the page.
+`WhatsApp号码` and `联系方式` are both derived from the one phone field on the
+form: whatever shape the visitor types (`012-345 6789`, `+6012 3456789`,
+`60123456789`) normalises to `60…` for the WhatsApp column and `+60 123456789`
+for display. The `utm_*` / `fbclid` / `gclid` columns fill from the landing
+URL — see the note on attribution below.
+
+**The WhatsApp handoff.** Put your own number in `WHATSAPP_NUMBER` as
+international digits, no `+` and no spaces (`012-345 6789` → `60123456789`).
+On a successful submit the visitor is sent to `wa.me` with their own answers
+already typed into the message, so the first thing you receive is a complete
+enquiry rather than "hi". Leave `WHATSAPP_NUMBER` blank to switch this off and
+show a plain thank-you line instead; `WHATSAPP_DELAY` controls the pause before
+the redirect.
+
+The redirect uses the **current tab**, deliberately. It fires after the fetch
+resolves, which is outside the click's user-gesture window, so `window.open()`
+would be popup-blocked. A real fallback link is rendered next to the message for
+anyone whose browser blocks the redirect or who navigates back.
+
+Until `SHEET_ENDPOINT` is set, submitting shows an error and logs the payload to
+the browser console — so you can still test the rest of the page.
 
 **Why `mode: "no-cors"`:** Apps Script doesn't return CORS headers on POST.
 The request goes through and the row is written, but the browser won't let the
@@ -150,6 +177,13 @@ first; otherwise Nunito Sans is a close match. Either way, swap the `--cn` / `--
 ---
 
 ## 6. Other notes
+
+**Ad attribution survives a reload.** `getAttribution()` reads `utm_source`,
+`utm_medium`, `utm_campaign`, `utm_content`, `fbclid` and `gclid` off the landing
+URL and stashes them in `sessionStorage`, so a lead still carries its campaign
+even if the visitor reloads or the URL gets cleaned up before they reach the
+form. Values already stored win only where the current URL has none, so a fresh
+click always overwrites a stale one.
 
 **Step cards flip layout on mobile.** Below 680px each card becomes a two-column grid
 — a square 118px thumbnail on the left, the step number, title and copy on the right —

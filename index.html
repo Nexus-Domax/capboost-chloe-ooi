@@ -76,6 +76,7 @@ img{max-width:100%;display:block}
   width:100%;max-width:520px;aspect-ratio:var(--ar);
   background:var(--shell) center/100% 100% no-repeat;
   border:none;padding:0;cursor:pointer;text-decoration:none;
+  color:#fff;font-family:var(--cn);
   transition:transform .18s ease,filter .18s ease;
 }
 /* gold light tracing the outer bezel — a chase around the pill outline */
@@ -536,6 +537,13 @@ img{max-width:100%;display:block}
   box-shadow:0 3px 10px -4px rgba(0,0,0,.4);
 }
 .field input::placeholder{color:var(--muted)}
+.field select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:38px;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23231F20' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;
+}
+/* greys the box until something is picked, so it reads like the other placeholders */
+.field select:invalid{color:var(--muted)}
 .field input:focus-visible,.field select:focus-visible{outline:3px solid rgba(255,255,255,.85);outline-offset:2px}
 .lead .cta-row{margin-top:30px}
 .formnote{margin:14px 0 0;text-align:center;font-size:12.5px;min-height:18px;font-weight:700}
@@ -923,6 +931,17 @@ img{max-width:100%;display:block}
         <input id="f_industry" name="industry" type="text" placeholder="Fill text here.." required>
       </div>
       <div class="field">
+        <label for="f_revenue">公司年营业额<span class="en">Annual Revenue:</span></label>
+        <select id="f_revenue" name="revenue" required>
+          <option value="" selected disabled>请选择 Please select..</option>
+          <option>Below RM1 Mil</option>
+          <option>RM1 - 3 Mil</option>
+          <option>RM3 - 5 Mil</option>
+          <option>RM5 - 10 Mil</option>
+          <option>RM10 Mil &amp; Above</option>
+        </select>
+      </div>
+      <div class="field">
         <label for="f_amount">寻找的资金金额<span class="en">How much financing do you need?</span></label>
         <input id="f_amount" name="amount" type="text" placeholder="Fill text here.." required>
       </div>
@@ -955,7 +974,17 @@ img{max-width:100%;display:block}
    Deploy > New deployment > Web app > Execute as: Me,
    Who has access: Anyone. Copy the /exec URL below.
    ============================================================ */
-var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwuWopLLdM1wpoM-nV8LYhiHVvmE50oG61F5oy42KqB_gPCroSgOh4bIxSk9x7d7IQEWw/exec";
+
+/* Your WhatsApp number in international digits, no + and no spaces.
+   e.g. 012-345 6789  ->  60123456789
+   After a successful submit the visitor is sent to WhatsApp with their own
+   answers already typed into the message. Leave blank to switch this off and
+   just show the thank-you line instead. */
+var WHATSAPP_NUMBER = "60146477739";   /* +6014-6477739 */
+
+/* Seconds to show "opening WhatsApp…" before the redirect fires. */
+var WHATSAPP_DELAY = 1.2;
 
 /* ---------- reveal on scroll ---------- */
 (function () {
@@ -983,6 +1012,54 @@ var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
   });
 })();
 
+/* ---------- ad attribution ----------
+   Meta and Google drop utm_* / fbclid / gclid on the landing URL. Stash them on
+   first arrival so they survive a reload or a scroll-to-form navigation, and
+   send them with the lead so the sheet can attribute it to a campaign. */
+function getAttribution() {
+  var KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","fbclid","gclid"];
+  var out = {}, i, v, stored = {};
+
+  try { stored = JSON.parse(sessionStorage.getItem("capboost_attr") || "{}"); }
+  catch (e) { stored = {}; }
+
+  var qs = new URLSearchParams(location.search);
+  for (i = 0; i < KEYS.length; i++) {
+    v = qs.get(KEYS[i]);
+    out[KEYS[i]] = v || stored[KEYS[i]] || "";
+  }
+
+  try { sessionStorage.setItem("capboost_attr", JSON.stringify(out)); } catch (e) {}
+  return out;
+}
+
+/* ---------- WhatsApp handoff ----------
+   Malaysian numbers get typed every which way (012-345 6789, +6012 3456789,
+   60123456789). wa.me wants bare international digits. */
+function waNumber(raw) {
+  var d = String(raw || "").replace(/\D/g, "");
+  if (!d) return "";
+  if (d.indexOf("60") === 0) return d;
+  if (d.charAt(0) === "0")   return "60" + d.slice(1);
+  return "60" + d;
+}
+
+function whatsappLink(d) {
+  if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER.indexOf("PASTE_") === 0) return "";
+  var msg =
+    "你好，我刚在 CAPBOOST 网站提交了资金申请 👋\n\n" +
+    "公司名称：" + d.company  + "\n" +
+    "姓名："     + d.name     + "\n" +
+    "联系方式：" + d.phone    + "\n" +
+    "公司运营多久：" + d.years + "\n" +
+    "从事行业：" + d.industry + "\n" +
+    "公司年营业额：" + d.revenue + "\n" +
+    "寻找资金金额：" + d.amount + "\n\n" +
+    "请问可以帮我了解资金方案吗？";
+  return "https://wa.me/" + waNumber(WHATSAPP_NUMBER) +
+         "?text=" + encodeURIComponent(msg);
+}
+
 /* ---------- lead form ---------- */
 (function () {
   var form = document.getElementById("leadForm");
@@ -993,6 +1070,31 @@ var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
   function say(msg, kind) {
     note.textContent = msg;
     note.className = "formnote" + (kind ? " " + kind : "");
+  }
+
+  /* Send them to WhatsApp with their own answers pre-typed. The redirect goes
+     through the CURRENT tab on purpose: this fires after an async fetch, so it
+     is outside the click's user-gesture window and window.open() would be
+     popup-blocked. A real link is rendered too, in case the visitor's browser
+     blocks the redirect or they come back to the page. */
+  function handoffToWhatsApp(d) {
+    var url = whatsappLink(d);
+
+    if (!url) {                       // number not configured yet
+      say("已收到！我们的融资顾问会尽快联系您。", "ok");
+      return;
+    }
+
+    note.className = "formnote ok";
+    note.textContent = "已收到！正在为你打开 WhatsApp… ";
+
+    var a = document.createElement("a");
+    a.href = url;
+    a.rel = "noopener";
+    a.textContent = "没有自动跳转？点这里联系我们";
+    note.appendChild(a);
+
+    setTimeout(function () { location.href = url; }, WHATSAPP_DELAY * 1000);
   }
 
   form.addEventListener("submit", function (ev) {
@@ -1014,20 +1116,29 @@ var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
       phone:     form.phone.value.trim(),
       years:     form.years.value.trim(),
       industry:  form.industry.value.trim(),
+      revenue:   form.revenue.value.trim(),
       amount:    form.amount.value.trim(),
       source:    "CAPBOOST B2 Desktop Landing",
       page:      location.href,
       submitted: new Date().toISOString()
     };
+    /* ad attribution — merged in so the sheet's utm/fbclid/gclid columns fill */
+    var attribution = getAttribution();
+    for (var k in attribution) { if (attribution[k]) data[k] = attribution[k]; }
 
     btn.disabled = true;
-    var original = btn.textContent;
-    btn.textContent = "提交中…";
+    /* The label lives in a <span> that .cta span positions and colours. Writing to
+       btn.textContent would replace that span with a bare text node and the button
+       would render its label black, unpositioned and unstyled from then on — so
+       always write to the span, never to the button. */
+    var label = btn.querySelector("span") || btn;
+    var original = label.textContent;
+    label.textContent = "提交中…";
     say("");
 
     if (SHEET_ENDPOINT.indexOf("PASTE_") === 0) {
       console.warn("SHEET_ENDPOINT is not configured — logging payload instead.", data);
-      btn.disabled = false; btn.textContent = original;
+      btn.disabled = false; label.textContent = original;
       say("尚未设置提交网址（见 index.html 的 SHEET_ENDPOINT）。", "err");
       return;
     }
@@ -1039,15 +1150,15 @@ var SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
       body: JSON.stringify(data)
     }).then(function () {
       form.reset();
-      btn.textContent = original;
+      label.textContent = original;
       btn.disabled = false;
-      say("已收到！我们的融资顾问会尽快联系您。", "ok");
       /* Meta Pixel / GA4 conversion hooks — uncomment when installed
       if (window.fbq) fbq("track", "Lead");
       if (window.gtag) gtag("event", "generate_lead");
       */
+      handoffToWhatsApp(data);
     }).catch(function () {
-      btn.textContent = original;
+      label.textContent = original;
       btn.disabled = false;
       say("提交失败，请稍后再试或直接 WhatsApp 我们。", "err");
     });
