@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CAPBOOST 生意发展资金 | Nexus Capital</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CAPBOOST 生意发展资金 | Domax</title>
 <meta name="description" content="专为 RM5 Mil 以上的企业而设的生意资金方案。无需抵押，符合 Shariah principles，运营满 2 年、有项目或订单在进行中的企业即可申请。">
-<meta property="og:title" content="CAPBOOST 生意发展资金 | Nexus Capital">
+<meta property="og:title" content="CAPBOOST 生意发展资金 | Domax">
 <meta property="og:description" content="项目/订单已到手，却总是差一点 Cash Flow？只需 4 步骤获得 RM2,000,000 的生意资金。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/hero-bg.jpg">
+<meta property="og:image" content="assets/img/og-share.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito+Sans:wght@400;600;800;900&display=swap">
@@ -19,14 +19,14 @@
    palette and type taken directly from the PDF.
    ============================================================ */
 :root{
-  --navy:#1B2A4F;
-  --navy-deep:#002855;
-  --navy-mid:#18395E;
+  --navy:#110D54;
+  --navy-deep:#050055;
+  --navy-mid:#1A1756;
   --orange:#FF5500;
   --gold:#FCB002;
   --cyan:#00D8FF;
   --cyan-dim:#05C3DD;
-  --blue:#1C75BC;
+  --blue:#211A88;
   --green:#39B54A;
   --green-dark:#009444;
   --ink:#231F20;
@@ -67,7 +67,7 @@ img{max-width:100%;display:block}
    CTA BUTTON
    ============================================================ */
 .cta{
-  --shell:url("assets/svg/btn-green.svg");
+  --shell:url("assets/svg/cta-shell-green.svg");
   --ar:463.2/116.88;   /* artwork aspect */
   --mid:42.1%;         /* baseline the designer set for the label, measured off the chevrons */
   --bezel:9.41% 8.81% 27.48% 2.44%;   /* chrome bezel inside the artwork box */
@@ -122,8 +122,8 @@ img{max-width:100%;display:block}
   text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 1px rgba(0,0,0,.35);
 }
 .cta--long span{font-size:20.5px;letter-spacing:.07em;text-indent:.07em}
-.cta--orange{--shell:url("assets/svg/btn-orange.svg")}
-.cta--teal{--shell:url("assets/svg/btn-teal.svg");
+.cta--orange{--shell:url("assets/svg/cta-shell-orange.svg")}
+.cta--teal{--shell:url("assets/svg/cta-shell-teal.svg");
   --ar:464.4/126.96;--mid:39.5%;--bezel:9.38% 8.94% 32.49% 2.50%}
 .cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
 .cta:active{transform:translateY(1px)}
@@ -171,12 +171,12 @@ img{max-width:100%;display:block}
    2. HERO
    ============================================================ */
 .hero{
-  position:relative;overflow:hidden;background:#0E1418;
+  position:relative;overflow:hidden;background:#0F0E18;
   padding:34px 0 0;
 }
 .hero__bg{
   position:absolute;inset:0;
-  background:url("assets/img/hero-bg.jpg") center 28% / cover no-repeat;
+  background:url("assets/img/og-share.jpg") center 28% / cover no-repeat;
   filter:saturate(.85);
 }
 .hero__bg::after{
@@ -216,7 +216,7 @@ img{max-width:100%;display:block}
   .hero__bg,.hero__boxes{animation:none;opacity:1}
 }
 .hero .wrap{position:relative;z-index:3}
-.hero__logo{width:215px;margin:0 auto 24px}
+.hero__logo{width:215px;margin:0 auto 24px}   /* matched to the old Nexus mark's WIDTH, per client */
 .hero__title{max-width:530px;margin:0 auto}
 .hero__sub{
   margin:14px 0 0;text-align:center;
@@ -233,7 +233,7 @@ img{max-width:100%;display:block}
    ============================================================ */
 .help{
   position:relative;
-  background:linear-gradient(180deg,#B8BFC9 0%,#0B3A63 7%,#002854 45%,#005E85 100%);
+  background:linear-gradient(180deg,#B8BFC9 0%,#0F0B5D 7%,#050054 45%,#080273 100%);
   color:#fff;padding:34px 0 46px;overflow:hidden;
 }
 .help__title{width:480px;max-width:100%;margin:0 auto 12px}
@@ -254,7 +254,7 @@ img{max-width:100%;display:block}
    label — cross-fading two background-image gradients is not reliable everywhere */
 .pill::before{
   content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;opacity:0;
-  background:linear-gradient(180deg,#5FD8EE 0%,#1C75BC 100%);
+  background:linear-gradient(180deg,#5FD8EE 0%,#211A88 100%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.45);
   animation:pillSweep 6s ease-in-out infinite;
 }
@@ -309,7 +309,7 @@ img{max-width:100%;display:block}
   100%     {transform:translate(0,0)}
 }
 @media (prefers-reduced-motion:reduce){.tile{animation:none}}
-.tile{position:relative;margin:0;border:1px solid rgba(255,255,255,.35);overflow:hidden;aspect-ratio:16/9;background:#0d2036}
+.tile{position:relative;margin:0;border:1px solid rgba(255,255,255,.35);overflow:hidden;aspect-ratio:16/9;background:#0F0D36}
 .tile img{width:100%;height:100%;object-fit:cover}
 .tile figcaption{
   position:absolute;bottom:6px;left:8px;right:8px;
@@ -369,7 +369,7 @@ img{max-width:100%;display:block}
 }
 .stepline{
   position:absolute;z-index:1;pointer-events:none;height:4px;
-  background:repeating-linear-gradient(90deg,#223046 0 13px,transparent 13px 26px);
+  background:repeating-linear-gradient(90deg,#232144 0 13px,transparent 13px 26px);
   transform-origin:0 0;
 }
 .stepline--0{left:-36px;              top:12%;    width:36px}
@@ -380,12 +380,12 @@ img{max-width:100%;display:block}
 .stepline--4::after{
   content:"";position:absolute;right:-7px;top:-6px;
   width:15px;height:15px;
-  border-right:4px solid #223046;border-bottom:4px solid #223046;
+  border-right:4px solid #232144;border-bottom:4px solid #232144;
   transform:rotate(-45deg);
 }
 .step__no{font-family:var(--en);font-size:13.5px;font-weight:900;color:var(--orange);margin:14px 0 4px;letter-spacing:.04em}
 .step__name{font-family:var(--cn);font-size:16px;font-weight:700;color:var(--navy);margin:0 0 8px;line-height:1.4;text-wrap:balance}
-.step__desc{margin:0;font-size:12.5px;line-height:1.8;color:#33405C;font-weight:400}
+.step__desc{margin:0;font-size:12.5px;line-height:1.8;color:#2E2C4E;font-weight:400}
 .steps .cta-row{margin-top:40px}
 
 /* ============================================================
@@ -393,8 +393,8 @@ img{max-width:100%;display:block}
    ============================================================ */
 .feature{
   background:
-    linear-gradient(180deg,rgba(24,57,94,1) 0%,rgba(24,57,94,.92) 26%,rgba(222,224,222,.94) 62%,#DEE0DE 100%),
-    url("assets/img/bg-paper.jpg") center / cover;
+    linear-gradient(180deg,rgba(26,23,86,1) 0%,rgba(26,23,86,.92) 26%,rgba(222,224,222,.94) 62%,#DEE0DE 100%),
+    url("assets/img/feature-bg.jpg") center / cover;
   padding:34px 0 44px;
 }
 .feature__logo{width:300px;margin:0 auto 10px}
@@ -422,36 +422,42 @@ img{max-width:100%;display:block}
    6. 成功案例
    ============================================================ */
 .cases{
-  background:linear-gradient(180deg,#FFFFFF 0%,#E8F1FA 14%,#215FAD 34%,#1B559E 70%,#195196 100%);
+  background:linear-gradient(180deg,#FFFFFF 0%,#EDEDF5 14%,#231D7F 34%,#1E1979 70%,#1C1775 100%);
   padding:36px 0 46px;
 }
 .cases__title{width:340px;max-width:100%;margin:0 auto 6px}
 .cases__sub{margin:0 0 22px;text-align:center;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.24em;text-indent:.24em}
+/* kept for when Domax event footage replaces the removed Nexus CTOS clip */
 .cases__video{width:100%;max-width:620px;margin:0 auto 26px;border-radius:12px;overflow:hidden;
   box-shadow:0 20px 40px -24px rgba(0,0,0,.75)}
-.cases__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0A1B33}
-.caselist{display:flex;flex-direction:column;gap:18px}
-/* light card, per the designer's Facility Management reference: photo left, white body
-   right, gold stars between navy rules, navy headline, orange for the pain line */
+.cases__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0C0A33}
+/* stacked card, per the designer's 3-up mock: photo on top, name, a two-figure
+   stat row, then left-aligned copy. Cyan carries the approved amount. */
+.caselist{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .case{
-  display:grid;grid-template-columns:45% 1fr;
-  border:1px solid rgba(255,255,255,.55);border-radius:4px;overflow:hidden;
+  display:flex;flex-direction:column;
+  border-radius:4px;overflow:hidden;background:#fff;
   box-shadow:0 18px 34px -20px rgba(0,0,0,.6);
 }
-.case__media{position:relative;overflow:hidden;min-height:186px;background:#123}
+.case__media{position:relative;overflow:hidden;aspect-ratio:16/7;background:#123;flex:none}
 .case__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.case__body{background:#fff;padding:20px 24px;color:#2A2E3A;display:flex;flex-direction:column;justify-content:center}
-.case__stars{display:flex;justify-content:center;align-items:center;gap:6px;margin-bottom:10px}
-.case__stars i{width:13px;height:13px;background:var(--gold);
-  clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.case__stars::before,.case__stars::after{content:"";height:1.5px;width:46px;background:#17235E;opacity:.85}
-.case__name{font-family:var(--en);font-size:18px;font-weight:900;color:#17235E;text-align:center;
-  margin:0 0 12px;line-height:1.3;text-wrap:balance}
-.case__name .city{font-weight:800;color:#17235E}
-.case__text{margin:0;font-size:13px;line-height:2;text-align:center;font-weight:400;color:#2A2E3A}
+.case__body{background:#fff;padding:22px 24px 26px;color:#211F43;text-align:left;
+  display:flex;flex-direction:column;flex:1}
+.case__name{font-family:var(--en);font-size:21px;font-weight:900;color:#191656;
+  text-align:left;margin:0 0 16px;line-height:1.25}
+.case__name .cn{font-family:var(--cn);white-space:nowrap}   /* never split 公 from 司 */
+/* two figures side by side; minmax(0,1fr) so a long number can't blow the column out */
+.case__stats{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin:0 0 16px}
+.case__stat .lbl{display:block;font-size:12.5px;font-weight:800;color:#191656;margin-bottom:2px}
+/* 16.5px is the largest that keeps RM12,000,000 inside its half of a 325px card —
+   at 20px the two figures ran into each other with no gap between them */
+.case__stat .val{display:block;font-family:var(--en);font-size:16.5px;font-weight:900;
+  color:#191656;line-height:1.15;letter-spacing:-.01em;white-space:nowrap}
+.case__stat--won .val{color:var(--cyan-dim)}
+.case__text{margin:0;font-size:13px;line-height:1.95;text-align:left;font-weight:500;color:#211F43}
 .case__text .o{color:var(--orange);font-weight:800}
-.case__text .g{color:#17235E;font-weight:800}
-.case__text .logo{height:15px;width:auto;min-height:0;display:inline-block;vertical-align:-2px;margin:0 5px}
+.case__text .g{color:var(--cyan-dim);font-weight:800}
+.case__text .logo{height:15px;width:auto;min-height:0;display:inline-block;vertical-align:-2px;margin:0 4px}
 .cases .cta-row{margin-top:32px}
 
 
@@ -459,7 +465,7 @@ img{max-width:100%;display:block}
    6b. 短片 (9:16 shorts)
    ============================================================ */
 .shorts{
-  background:linear-gradient(180deg,#195196 0%,#1A5391 34%,#5E96C2 78%,#B7D8E4 100%);
+  background:linear-gradient(180deg,#1C1775 0%,#1D1872 34%,#423E8C 78%,#B7D8E4 100%);
   padding:40px 0 46px;
 }
 /* gold artwork, sized against its ink like the other headlines. Width is set so the
@@ -470,9 +476,9 @@ img{max-width:100%;display:block}
 .shorts__sub{margin:0 0 28px;text-align:center;font-family:var(--en);font-size:15px;font-weight:600;
   letter-spacing:.22em;text-transform:uppercase;color:#BFE4F5}
 .shortsrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.short{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#0A1B33;
+.short{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#0C0A33;
   box-shadow:0 18px 34px -20px rgba(0,0,0,.85);border:1px solid rgba(255,255,255,.16)}
-.short video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#0A1B33}
+.short video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#0C0A33}
 .shorts .cta-row{margin-top:32px}
 @media (max-width:680px){
   /* a snap-scroll strip reads better than three tall clips stacked */
@@ -494,7 +500,10 @@ img{max-width:100%;display:block}
 }
 .faq__title{width:300px;max-width:100%;margin:0 auto 2px}
 .faq__h2{margin:0 0 32px;text-align:center;font-family:var(--en);font-size:26px;font-weight:600;color:var(--navy-deep)}
-.faqgrid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:26px 24px;padding-bottom:38px}
+/* auto rows, not 1fr: with 9 cards of very different lengths, 1fr would make every
+   row as tall as the tallest one. Cards still match within their own row, because
+   grid stretches them and .qa is height:100%. */
+.faqgrid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:26px 24px;padding-bottom:38px}
 .faqgrid > *:nth-child(even){transform:translateY(38px)}
 .qa{position:relative;height:100%;background:#fff;border-radius:12px;padding:40px 22px 26px;
   box-shadow:0 14px 26px -18px rgba(20,50,70,.55),0 1px 3px rgba(20,50,70,.08);
@@ -511,7 +520,7 @@ img{max-width:100%;display:block}
 .qa__a{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink);font-weight:500}
 .qa__a .b{color:var(--blue);font-weight:700}
 .qa__a .o{color:var(--orange);font-weight:700}
-.qa__note{display:inline-block;margin-top:6px;font-size:12.5px;color:#5A6675;font-weight:500}
+.qa__note{display:inline-block;margin-top:6px;font-size:12.5px;color:#5C5A75;font-weight:500}
 .faq .cta-row{margin-top:36px}
 
 /* ============================================================
@@ -612,15 +621,12 @@ img{max-width:100%;display:block}
   .step__pin{top:-15px;left:14px;width:26px}
   .fcard{grid-template-columns:1fr}
   .fcard__photo{min-height:180px}
-    .case{grid-template-columns:1fr}
-  /* photo drops to a slim banner so the story leads; a narrow side-by-side column
-     would squeeze this much Chinese copy to ~16 characters a line */
-  .case__media{min-height:0;aspect-ratio:16/4}
-  .case__body{padding:16px 18px 18px}
-  .case__stars{margin-bottom:7px}
-  .case__stars i{width:11px;height:11px}
-  .case__stars::before,.case__stars::after{width:34px}
-  .case__name{font-size:16px;margin-bottom:8px}
+  .caselist{grid-template-columns:1fr;gap:18px}
+  .case__media{aspect-ratio:16/5}
+  .case__body{padding:18px 18px 20px}
+  .case__name{font-size:19px;margin-bottom:12px}
+  .case__stats{margin-bottom:13px}
+  .case__stat .val{font-size:19px}
   .case__text{font-size:13.5px;line-height:1.95}
   .case__text .logo{height:14px}
   .faqgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:30px;padding-bottom:0}
@@ -649,17 +655,16 @@ img{max-width:100%;display:block}
 </style>
 </head>
 <body>
-
 <!-- ========== 1. ANNOUNCEMENT BAR ========== -->
 <header class="topbar">
   <div class="ticker">
     <div class="ticker__track">
-      <div class="ticker__item"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
-      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
-      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
-      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
-      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
-      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
+      <div class="ticker__item" aria-hidden="true"><img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"><span>生意发展资金！ 专为 <b>RM5 Mil 以上的企业</b> 而设的生意资金方案</span><i class="ticker__dot"></i></div>
     </div>
   </div>
 </header>
@@ -667,13 +672,13 @@ img{max-width:100%;display:block}
 <!-- ========== 2. HERO ========== -->
 <section class="hero">
   <div class="hero__bg" aria-hidden="true"></div>
-  <div class="hero__slide hero__slide--2" aria-hidden="true" style="--img:url('assets/img/hero-2-construction.jpg')"></div>
-  <div class="hero__slide hero__slide--3" aria-hidden="true" style="--img:url('assets/img/hero-3-factory.jpg')"></div>
-  <div class="hero__slide hero__slide--4" aria-hidden="true" style="--img:url('assets/img/hero-4-warehouse.jpg')"></div>
+  <div class="hero__slide hero__slide--2" aria-hidden="true" style="--img:url('assets/img/hero-slide-2.jpg')"></div>
+  <div class="hero__slide hero__slide--3" aria-hidden="true" style="--img:url('assets/img/hero-slide-3.jpg')"></div>
+  <div class="hero__slide hero__slide--4" aria-hidden="true" style="--img:url('assets/img/hero-slide-4.jpg')"></div>
   <div class="wrap">
-    <img class="hero__logo" src="assets/svg/logo-nexus.svg" alt="Nexus Capital">
-    <h1 class="hero__title"><img src="assets/img/title-hero.png" alt="项目 / 订单已到手"></h1>
-    <p class="hero__sub">却总是差一点 <img src="assets/img/cashflow.png" alt="Cash Flow ?"></p>
+    <img class="hero__logo" src="assets/img/domax-logo.png" alt="Domax — Powering Growth Beyond Limits">
+    <h1 class="hero__title"><img src="assets/img/hero-headline.png" alt="项目 / 订单已到手"></h1>
+    <p class="hero__sub">却总是差一点 <img src="assets/img/hero-cashflow.png" alt="Cash Flow ?"></p>
   </div>
   <img class="hero__boxes" src="assets/img/hero-boxes.png" alt="" aria-hidden="true">
 </section>
@@ -681,11 +686,11 @@ img{max-width:100%;display:block}
 <!-- ========== 3. 我们协助 ========== -->
 <section class="help">
   <div class="wrap">
-    <img class="help__title rv" src="assets/img/title-we-help.png" alt="我们协助">
+    <img class="help__title rv" src="assets/img/help-title.png" alt="我们协助">
     <h2 class="help__h2 rv">企业解决资金需求</h2>
     <div class="help__rule"></div>
     <div class="help__line rv">
-      <img src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST">
+      <img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST">
       <span>生意发展资金，符合企业增强</span>
     </div>
     <div class="pills rv">
@@ -696,28 +701,28 @@ img{max-width:100%;display:block}
 
     <div class="help__stage">
       <div class="tiles rv">
-        <figure class="tile"><img src="assets/img/ind-construction.jpg" alt="Construction / Engineering"><figcaption>Construction / Engineering</figcaption></figure>
-        <figure class="tile tile--r"><img src="assets/img/ind-manufacturing.jpg" alt="Manufacturing"><figcaption>Manufacturing</figcaption></figure>
-        <figure class="tile"><img src="assets/img/ind-logistics.jpg" alt="Logistics"><figcaption>Logistics</figcaption></figure>
-        <figure class="tile tile--r"><img src="assets/img/ind-trading.jpg" alt="Trading"><figcaption>Trading</figcaption></figure>
+        <figure class="tile"><img src="assets/img/tile-construction.jpg" alt="Construction / Engineering"><figcaption>Construction / Engineering</figcaption></figure>
+        <figure class="tile tile--r"><img src="assets/img/tile-manufacturing.jpg" alt="Manufacturing"><figcaption>Manufacturing</figcaption></figure>
+        <figure class="tile"><img src="assets/img/tile-logistics.jpg" alt="Logistics"><figcaption>Logistics</figcaption></figure>
+        <figure class="tile tile--r"><img src="assets/img/tile-trading.jpg" alt="Trading"><figcaption>Trading</figcaption></figure>
       </div>
-      <img class="help__portrait" src="assets/img/chloe.png" alt="Chloe Ooi, Co-Founder of Nexus Capital">
+      <img class="help__portrait" src="assets/img/chloe-portrait.png" alt="Chloe Ooi, Business Unit Manager of Domax">
     </div>
 
     <div class="creds">
       <div>
-        <img class="creds__sig" src="assets/svg/signature-chloe.svg" alt="Chloe Ooi">
-        <p class="creds__role">Co-Founder<br>of Nexus Capital</p>
+        <img class="creds__sig" src="assets/svg/chloe-signature.svg" alt="Chloe Ooi">
+        <p class="creds__role">Business Unit Manager<br>of Domax</p>
       </div>
       <div class="creds__spacer" aria-hidden="true"></div>
       <div class="creds__right">
-        <img src="assets/svg/badge-aicb.svg" alt="Asian Institute of Chartered Bankers">
+        <img src="assets/svg/aicb-logo.svg" alt="Asian Institute of Chartered Bankers">
         <p>Certificate in Credit by<br>Asian Institute of Chartered Bankers (AICB)</p>
         <p>Affiliate Member of<br>Asian Institute of Chartered Bankers (AICB)</p>
       </div>
     </div>
 
-    <img class="help__badge rv" src="assets/img/badge-9years.png" alt="9年+ SME 融资经验">
+    <img class="help__badge rv" src="assets/img/help-badge.png" alt="9年+ SME 融资经验">
     <p class="help__stats rv">帮助超过 <b>3,000+</b> 企业老板获得 <b>500M+</b> 融资</p>
     <div class="cta-row"><a class="cta cta--orange" href="#lead"><span>我想了解资金方案！</span></a></div>
   </div>
@@ -727,7 +732,7 @@ img{max-width:100%;display:block}
 <section class="steps">
   <div class="wrap">
     <p class="steps__eyebrow rv"><span class="o">只需 4 步骤</span> <span class="n">获得</span></p>
-    <img class="steps__amount rv" src="assets/img/title-rm2m.png" alt="RM2,000,000">
+    <img class="steps__amount rv" src="assets/img/steps-amount.png" alt="RM2,000,000">
     <p class="steps__sub rv">的生意资金</p>
 
     <div class="stepgrid">
@@ -737,28 +742,28 @@ img{max-width:100%;display:block}
       <span class="stepline stepline--3" aria-hidden="true"></span>
       <span class="stepline stepline--4" aria-hidden="true"></span>
       <article class="step rv">
-        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img src="assets/svg/step-pin.svg" class="step__pin" alt="" aria-hidden="true">
         <img class="step__photo" src="assets/img/step-01.jpg" alt="">
         <p class="step__no">Step 01</p>
         <p class="step__name">提交资料，免费评估申请资格</p>
         <p class="step__desc">提交基本公司资料与相关文件，由专业顾问全程跟进。所有资料将依据《个人资料保护法令》（PDPA）严格保密。</p>
       </article>
       <article class="step rv">
-        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img src="assets/svg/step-pin.svg" class="step__pin" alt="" aria-hidden="true">
         <img class="step__photo" src="assets/img/step-02.jpg" alt="">
         <p class="step__no">Step 02</p>
         <p class="step__name">获取初步融资方案</p>
         <p class="step__desc">通过初步评估后，我们将提供建议融资额度与方案，并协助您准备及提交所需的补充文件。</p>
       </article>
       <article class="step rv">
-        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img src="assets/svg/step-pin.svg" class="step__pin" alt="" aria-hidden="true">
         <img class="step__photo" src="assets/img/step-03.jpg" alt="">
         <p class="step__no">Step 03</p>
         <p class="step__name">安排企业实地考察</p>
         <p class="step__desc">专业团队将进行 Site Visit，深入了解您的业务营运、资金需求及还款能力。</p>
       </article>
       <article class="step rv">
-        <img src="assets/svg/pin.svg" class="step__pin" alt="" aria-hidden="true">
+        <img src="assets/svg/step-pin.svg" class="step__pin" alt="" aria-hidden="true">
         <img class="step__photo" src="assets/img/step-04.jpg" alt="">
         <p class="step__no">Step 04</p>
         <p class="step__name">批准、签约及融资到账</p>
@@ -773,16 +778,16 @@ img{max-width:100%;display:block}
 <!-- ========== 5. CAPBOOST feature card ========== -->
 <section class="feature">
   <div class="wrap">
-    <img class="feature__logo rv" src="assets/svg/logo-capboost-inline.svg" alt="CAPBOOST">
+    <img class="feature__logo rv" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST">
     <p class="feature__kicker rv">生意发展资金</p>
     <div class="fcard rv">
-      <img class="fcard__photo" src="assets/img/consultation.jpg" alt="融资顾问与客户咨询">
+      <img class="fcard__photo" src="assets/img/feature-photo.jpg" alt="融资顾问与客户咨询">
       <ul>
-        <li><img src="assets/svg/icon-check.svg" alt="">根据企业状况规划融资方案</li>
-        <li><img src="assets/svg/icon-check.svg" alt="">提供实际可行的融资选择</li>
-        <li><img src="assets/svg/icon-check.svg" alt="">专属顾问一对一全程跟进</li>
-        <li><img src="assets/svg/icon-check.svg" alt="">简化流程，提高申请效率</li>
-        <li><img src="assets/svg/icon-check.svg" alt="">清楚透明，不盲目申请</li>
+        <li><img src="assets/svg/check-tick.svg" alt="">根据企业状况规划融资方案</li>
+        <li><img src="assets/svg/check-tick.svg" alt="">提供实际可行的融资选择</li>
+        <li><img src="assets/svg/check-tick.svg" alt="">专属顾问一对一全程跟进</li>
+        <li><img src="assets/svg/check-tick.svg" alt="">简化流程，提高申请效率</li>
+        <li><img src="assets/svg/check-tick.svg" alt="">清楚透明，不盲目申请</li>
       </ul>
     </div>
     <div class="cta-row"><a class="cta" href="#lead"><span>点击申请生意资金</span></a></div>
@@ -792,64 +797,79 @@ img{max-width:100%;display:block}
 <!-- ========== 6. 成功案例 ========== -->
 <section class="cases">
   <div class="wrap">
-    <img class="cases__title rv" src="assets/img/title-cases.png" alt="成功案例">
+    <img class="cases__title rv" src="assets/img/cases-title.png" alt="成功案例">
     <p class="cases__sub rv">一切都因我们而改变</p>
-    <div class="cases__video rv">
-      <video
-        src="assets/video/team.mp4"
-        poster="assets/img/team-video-poster.jpg"
-        autoplay muted loop playsinline controls preload="auto"
-        aria-label="Nexus Capital CTOS Event Highlight"></video>
-    </div>
 
     <div class="caselist">
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-construction.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-1-construction.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">Construction Company, <span class="city">Kepong</span></h3>
-          <p class="case__text">三个月前 Encik Siva <span class="o">Bid 到 RM40 Mil</span> 的政府 Project，因为银行迟迟没有批 Project Financing，导致差点延误开工。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> 并在 <span class="g">7 天内拿到 RM1.5 Mil 启动资金</span>，让项目顺利开跑。</p>
+          <h3 class="case__name">Construction <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM8,000,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,500,000</span></div>
+          </div>
+          <p class="case__text">成功 <span class="o">Bid 到 RM40M 政府工程</span>，但银行 Project Financing 迟迟未批，启动资金不足，项目面临延误。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">7 天内获得 RM1.5M 启动资金</span>，顺利开工。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-trading.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-2-trading.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">Trading Company, <span class="city">Subang Jaya</span></h3>
-          <p class="case__text">Mr Yeo 的 Machinery 公司一年 Turnover 至少 RM6mil。由于 <span class="o">Main Supplier 要求提早清完货款才出货</span>，导致公司资金链受影响。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> 并在完成 Site Visit 后的 <span class="g">3 天内拿到 RM1.2mil 的周转资金</span>。</p>
+          <h3 class="case__name">Trading <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM6,000,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,200,000</span></div>
+          </div>
+          <p class="case__text">Main Supplier 要求公司<span class="o">半年内完成 RM2M 订单</span>，但订单量大导致短期 Cash Flow 不足，影响出货进度。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST">，<span class="g">Site Visit 后 3 天内获得 RM1.2M 周转资金</span>，顺利完成订单。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-manufacturing.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-3-manufacturing.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">Manufacturing Company, <span class="city">Nilai</span></h3>
-          <p class="case__text">Mr Lim 的公司专门生产 Automotive Plastic Components。临时接到 MNC 的大订单，因产能不足，<span class="o">需要增加两条 Production Lines</span> 才能按时交货。我们帮他 <span class="g">7 天内批出 RM2 Million</span> <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">资金</span>，让新生产线及时投入生产。</p>
+          <h3 class="case__name">Manufacturing <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM12,000,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,800,000</span></div>
+          </div>
+          <p class="case__text">公司接到 <span class="o">MNC 大额 Automotive Plastic Components 订单</span>，但生产所需资金不足，无法及时增加产能。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">7 天内获得 RM1.8M 生产资金</span>，成功扩大产能并顺利投入生产。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-it.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-4-technology.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">IT Company, <span class="city">Johor</span></h3>
-          <p class="case__text">William 经营 IT System Integrator 生意，近期接到 <span class="o">RM5 Mil 的 MNC Project</span>。PO 已经确认，但 Supplier 要求先付款，公司却要等客户完成 Project milestone 后才能收款。我们帮他申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST">，<span class="g">先解决前期 Supplier Payment</span>，让公司可以按计划采购和启动 Project。</p>
+          <h3 class="case__name">Technology <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM18,000,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM2,000,000</span></div>
+          </div>
+          <p class="case__text">公司拿下 <span class="o">RM5M MNC Project</span>，但 Supplier 要求提前付款，前期资金压力大，影响 Project 执行。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">解决前期 Supplier Payment Cash Flow</span>，让公司顺利启动并推进 Project。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-healthcare.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-5-healthcare.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">Healthcare Company, <span class="city">Penang</span></h3>
-          <p class="case__text">Encik Farid 的 Healthcare Supplies 公司在上两个月前接到大型紧急订单，但 <span class="o">前期采购资金不足</span>，差点影响交货进度。我们协助申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">RM800K</span>，在 <span class="g">8 天内解决短期资金缺口</span>，让订单顺利完成。</p>
+          <h3 class="case__name">Healthcare <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM5,000,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM800,000</span></div>
+          </div>
+          <p class="case__text">接到<span class="o">大型 Hospital Supplies 订单</span>，但原有融资额度不足，短期 Cash Flow 面临压力。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">8 天内获得 RM800K 资金</span>，让订单顺利完成。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-facility.jpg" alt=""></div>
+        <div class="case__media"><img src="assets/img/case-6-facility-management.jpg" alt=""></div>
         <div class="case__body">
-          <div class="case__stars" aria-label="5 星评价"><i></i><i></i><i></i><i></i><i></i></div>
-          <h3 class="case__name">Facility Management Company, <span class="city">Perak</span></h3>
-          <p class="case__text">Mr Chua 今年拿下 RM6 Mil 的 3-year Contract，新项目需要一次性增加 80 名员工。但公司现有项目的 <span class="o">Cash Flow 还在周转中</span>，手上的资金一时不够。我们协助申请 <img class="logo" src="assets/svg/logo-capboost-inline-dark.svg" alt="CAPBOOST"> <span class="g">RM600K</span>，解决新项目的启动资金。</p>
+          <h3 class="case__name">Facility Management <span class="cn">公司</span></h3>
+          <div class="case__stats">
+            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM3,800,000</span></div>
+            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM600,000</span></div>
+          </div>
+          <p class="case__text">接获价值 <span class="o">RM6M、3 年期 Facility Management Contract</span>，但项目需要新增约 80 名员工，前期运营资金不足。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">获得 RM600K 启动资金</span>，解决人力及项目初期 Cash Flow。</p>
         </div>
+      </article>
+    </div>
+      </article>
+    </div>
       </article>
     </div>
 
@@ -861,12 +881,12 @@ img{max-width:100%;display:block}
 <!-- ========== 6b. 短片 ========== -->
 <section class="shorts">
   <div class="wrap">
-    <img class="shorts__h2 rv" src="assets/img/title-insights.png" alt="融资知识分享">
+    <img class="shorts__h2 rv" src="assets/img/shorts-title.png" alt="融资知识分享">
     <p class="shorts__sub rv">Financing Insights</p>
     <div class="shortsrow">
-      <figure class="short rv"><video src="assets/video/short-1.mp4" poster="assets/img/short-1-poster.jpg" playsinline controls preload="none" aria-label="融资短片 1"></video></figure>
-      <figure class="short rv"><video src="assets/video/short-2.mp4" poster="assets/img/short-2-poster.jpg" playsinline controls preload="none" aria-label="融资短片 2"></video></figure>
-      <figure class="short rv"><video src="assets/video/short-3.mp4" poster="assets/img/short-3-poster.jpg" playsinline controls preload="none" aria-label="融资短片 3"></video></figure>
+      <figure class="short rv"><video poster="assets/img/short-1-poster.jpg" playsinline controls preload="none" aria-label="融资短片 1"></video></figure>
+      <figure class="short rv"><video poster="assets/img/short-2-poster.jpg" playsinline controls preload="none" aria-label="融资短片 2"></video></figure>
+      <figure class="short rv"><video poster="assets/img/short-3-poster.jpg" playsinline controls preload="none" aria-label="融资短片 3"></video></figure>
     </div>
   </div>
 </section>
@@ -874,26 +894,48 @@ img{max-width:100%;display:block}
 <!-- ========== 7. FAQ ========== -->
 <section class="faq">
   <div class="wrap">
-    <img class="faq__title rv" src="assets/img/title-faq.png" alt="常见问题">
-    <h2 class="faq__h2 rv">Frequently Asked Question</h2>
+    <img class="faq__title rv" src="assets/img/faq-title.png" alt="常见问题">
+    <h2 class="faq__h2 rv">Frequently Asked Questions</h2>
 
     <div class="faqgrid">
       <div class="qa rv">
         <span class="qa__q">什么企业适合申请？</span>
-        <p class="qa__a">运营<span class="o">至少 2 年</span>，有<span class="o">项目 / 订单在进行中</span>的企业。<br>
-        <span class="qa__note">（<span class="b">Construction</span>、<span class="b">Manufacturing</span>、<span class="b">Trading</span>、<span class="b">Logistic</span>、<span class="b">IT</span> 都可以申请）</span></p>
+        <p class="qa__a"><span class="o">成立并营运至少 2 年</span>，有<span class="o">项目 / 订单在进行中</span>的企业。<br>
+        <span class="qa__note">（<span class="b">Construction</span>、<span class="b">Manufacturing</span>、<span class="b">Trading</span>、<span class="b">Logistics</span>、<span class="b">IT</span> 都可以申请）</span></p>
       </div>
       <div class="qa rv">
         <span class="qa__q">最低营业额多少？</span>
-        <p class="qa__a"><span class="o">至少 RM5 Million 或以上</span>。</p>
+        <p class="qa__a"><span class="o">年营业额至少 RM5 million</span>。</p>
       </div>
       <div class="qa rv">
         <span class="qa__q">需要抵押吗？</span>
         <p class="qa__a"><span class="o">无需抵押</span>。</p>
       </div>
       <div class="qa rv">
-        <span class="qa__q">这个融资方案是否合法合规？</span>
-        <p class="qa__a">我们提供符合 <span class="b">Shariah principles</span>（<span class="b">Shariah-compliant financing</span>）的融资方案。</p>
+        <span class="qa__q">CapBoost 是否符合相关法规？</span>
+        <p class="qa__a">CapBoost 由<span class="o">持牌信贷公司</span>提供，并采用符合 <span class="b">Shariah</span> 原则的融资结构。所有条款与费用都会在<span class="o">签约前清楚说明</span>。</p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">从申请到获得资金需要多久？</span>
+        <p class="qa__a">文件齐全后，审批通常约需 <span class="o">7 个工作日</span>。完成签约及所有放款条件后，最快可在 <span class="o">3 个工作日</span>内获得资金。</p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">申请时需要准备什么文件？</span>
+        <p class="qa__a">一般需要提供公司注册文件、近 6 个月 <span class="b">Bank Statements</span>、近两年财务报表、应收及应付账龄报告等。<br>
+        <span class="qa__note">顾问将根据公司情况提供完整文件清单。</span></p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">已经有银行贷款，还可以申请吗？</span>
+        <p class="qa__a"><span class="o">可以</span>。我们会综合评估公司的现有融资承担、现金流及还款能力，再提供合适的融资方案。</p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">CTOS 或 CCRIS 记录会影响申请吗？</span>
+        <p class="qa__a">相关记录将作为整体评估的一部分，但<span class="o">不会只依据单一记录</span>作出决定。<br>
+        <span class="qa__note">建议先提交资料，让顾问进行初步评估。</span></p>
+      </div>
+      <div class="qa rv">
+        <span class="qa__q">提交资料是否安全？</span>
+        <p class="qa__a">所有客户资料都会按照 <span class="b">PDPA</span> 要求<span class="o">严格保密</span>，并由专业顾问全程负责跟进。</p>
       </div>
     </div>
 
@@ -905,7 +947,7 @@ img{max-width:100%;display:block}
 <section class="lead" id="lead">
   <div class="wrap">
     <p class="lead__hand rv">生意要冲！</p>
-    <img class="lead__title rv" src="assets/img/title-form.png" alt="资金先到位">
+    <img class="lead__title rv" src="assets/img/lead-title.png" alt="资金先到位">
     <div class="lead__rule"></div>
     <p class="lead__hand2 rv">一步到位获得融资</p>
 
@@ -957,10 +999,10 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <p>老板不可错过的融资好康！ 关注以下平台获取最新资讯！</p>
     <div class="social__icons">
-      <a href="#" aria-label="Facebook"><img src="assets/img/soc-facebook.png" alt=""></a>
-      <a href="#" aria-label="Instagram"><img src="assets/img/soc-instagram.png" alt=""></a>
-      <a href="#" aria-label="TikTok"><img src="assets/img/soc-tiktok.png" alt=""></a>
-      <a href="#" aria-label="小红书"><img src="assets/img/soc-xiaohongshu.png" alt=""></a>
+      <a href="#" aria-label="Facebook"><img src="assets/img/social-facebook.png" alt=""></a>
+      <a href="#" aria-label="Instagram"><img src="assets/img/social-instagram.png" alt=""></a>
+      <a href="#" aria-label="TikTok"><img src="assets/img/social-tiktok.png" alt=""></a>
+      <a href="#" aria-label="小红书"><img src="assets/img/social-xiaohongshu.png" alt=""></a>
     </div>
   </div>
 </div>
