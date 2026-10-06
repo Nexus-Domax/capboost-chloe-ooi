@@ -508,11 +508,14 @@ img{max-width:100%;display:block}
 .qa{position:relative;height:100%;background:#fff;border-radius:12px;padding:40px 22px 26px;
   box-shadow:0 14px 26px -18px rgba(20,50,70,.55),0 1px 3px rgba(20,50,70,.08);
   min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center}
+/* The longest question (CTOS 或 CCRIS…) needs ~290px on one line, and a card in the
+   two-column grid is only 324px wide — so the label sits nearly edge to edge and the
+   tracking is kept tight. Loosening either one drops "吗？" onto a second line. */
 .qa__q{
-  position:absolute;top:-19px;left:18px;max-width:calc(100% - 36px);
+  position:absolute;top:-19px;left:12px;max-width:calc(100% - 24px);
   background:linear-gradient(180deg,#FF7A2B 0%,#F04E00 100%);
-  color:#fff;font-size:15.5px;font-weight:700;letter-spacing:.04em;
-  padding:9px 18px;border-radius:9px;
+  color:#fff;font-size:15px;font-weight:700;letter-spacing:.02em;
+  padding:9px 15px;border-radius:9px;
   box-shadow:0 6px 12px -6px rgba(240,78,0,.8);
 }
 .qa__q::after{content:"";position:absolute;left:22px;bottom:-6px;width:13px;height:13px;
@@ -691,7 +694,7 @@ img{max-width:100%;display:block}
     <div class="help__rule"></div>
     <div class="help__line rv">
       <img src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST">
-      <span>生意发展资金，符合企业增强</span>
+      <span>生意发展资金，辅助企业增强</span>
     </div>
     <div class="pills rv">
       <span class="pill">Working Capital</span>
@@ -884,9 +887,15 @@ img{max-width:100%;display:block}
     <img class="shorts__h2 rv" src="assets/img/shorts-title.png" alt="融资知识分享">
     <p class="shorts__sub rv">Financing Insights</p>
     <div class="shortsrow">
-      <figure class="short rv"><video poster="assets/img/short-1-poster.jpg" playsinline controls preload="none" aria-label="融资短片 1"></video></figure>
-      <figure class="short rv"><video poster="assets/img/short-2-poster.jpg" playsinline controls preload="none" aria-label="融资短片 2"></video></figure>
-      <figure class="short rv"><video poster="assets/img/short-3-poster.jpg" playsinline controls preload="none" aria-label="融资短片 3"></video></figure>
+      <figure class="short rv"><video poster="assets/img/short-1-poster.jpg" playsinline controls preload="none" aria-label="融资短片 1">
+          <source src="assets/video/short-1.mp4" type="video/mp4">
+        </video></figure>
+      <figure class="short rv"><video poster="assets/img/short-2-poster.jpg" playsinline controls preload="none" aria-label="融资短片 2">
+          <source src="assets/video/short-2.mp4" type="video/mp4">
+        </video></figure>
+      <figure class="short rv"><video poster="assets/img/short-3-poster.jpg" playsinline controls preload="none" aria-label="融资短片 3">
+          <source src="assets/video/short-3.mp4" type="video/mp4">
+        </video></figure>
     </div>
   </div>
 </section>
