@@ -422,43 +422,90 @@ img{max-width:100%;display:block}
    6. 成功案例
    ============================================================ */
 .cases{
-  background:linear-gradient(180deg,#FFFFFF 0%,#EDEDF5 14%,#231D7F 34%,#1E1979 70%,#1C1775 100%);
+  /* gradient stops are the designer's own spec sheet (BFA-30), not eyeballed */
+  background:linear-gradient(180deg,#FFFFFF 0%,#89B4E2 75%,#2B79CB 90%,#110D54 100%);
   padding:36px 0 46px;
 }
 .cases__title{width:340px;max-width:100%;margin:0 auto 6px}
-.cases__sub{margin:0 0 22px;text-align:center;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.24em;text-indent:.24em}
+.cases__sub{margin:0 0 26px;text-align:center;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.24em;text-indent:.24em}
 /* kept for when Domax event footage replaces the removed Nexus CTOS clip */
 .cases__video{width:100%;max-width:620px;margin:0 auto 26px;border-radius:12px;overflow:hidden;
   box-shadow:0 20px 40px -24px rgba(0,0,0,.75)}
 .cases__video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0C0A33}
-/* stacked card, per the designer's 3-up mock: photo on top, name, a two-figure
-   stat row, then left-aligned copy. Cyan carries the approved amount. */
-.caselist{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+/* ---- case card, rebuilt to Case Study_B ----------------------------------
+   Everything except the photo and the RM figure is live text, so the copy
+   stays editable; the RM figure keeps the designer's metallic/orange
+   lettering as artwork because CSS cannot reproduce that fill.
+   Cards are sized by HEIGHT on the figure, not width — RM2Mil is a much
+   narrower word than RM1.5Mil and sizing by width would shrink it. */
+.caselist{display:grid;grid-template-columns:1fr 1fr;gap:26px 22px}
 .case{
-  display:flex;flex-direction:column;
-  border-radius:4px;overflow:hidden;background:#fff;
-  box-shadow:0 18px 34px -20px rgba(0,0,0,.6);
+  position:relative;display:flex;flex-direction:column;container-type:inline-size;
+  border-radius:18px;padding:14px 14px 16px;
+  background:
+    radial-gradient(120% 85% at 6% 2%,  rgba(0,104,235,.50) 0%, rgba(0,0,0,0) 55%),
+    radial-gradient(115% 80% at 97% 99%, rgba(0,108,245,.52) 0%, rgba(0,0,0,0) 58%),
+    linear-gradient(150deg,#01397F 0%,#02234F 46%,#012B68 72%,#013D92 100%);
+  box-shadow:0 22px 40px -24px rgba(0,0,0,.8), inset 0 0 0 1px rgba(125,175,255,.20);
 }
-.case__media{position:relative;overflow:hidden;aspect-ratio:16/7;background:#123;flex:none}
-.case__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.case__body{background:#fff;padding:22px 24px 26px;color:#211F43;text-align:left;
-  display:flex;flex-direction:column;flex:1}
-.case__name{font-family:var(--en);font-size:21px;font-weight:900;color:#191656;
-  text-align:left;margin:0 0 16px;line-height:1.25}
-.case__name .cn{font-family:var(--cn);white-space:nowrap}   /* never split 公 from 司 */
-/* two figures side by side; minmax(0,1fr) so a long number can't blow the column out */
-.case__stats{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin:0 0 16px}
-.case__stat .lbl{display:block;font-size:12.5px;font-weight:800;color:#191656;margin-bottom:2px}
-/* 16.5px is the largest that keeps RM12,000,000 inside its half of a 325px card —
-   at 20px the two figures ran into each other with no gap between them */
-.case__stat .val{display:block;font-family:var(--en);font-size:16.5px;font-weight:900;
-  color:#191656;line-height:1.15;letter-spacing:-.01em;white-space:nowrap}
-.case__stat--won .val{color:var(--cyan-dim)}
-.case__text{margin:0;font-size:13px;line-height:1.95;text-align:left;font-weight:500;color:#211F43}
-.case__text .o{color:var(--orange);font-weight:800}
-.case__text .g{color:var(--cyan-dim);font-weight:800}
-.case__text .logo{height:15px;width:auto;min-height:0;display:inline-block;vertical-align:-2px;margin:0 4px}
-.cases .cta-row{margin-top:32px}
+
+/* photo, inside the designer's hairline frame */
+.case__shot{position:relative;border:1px solid rgba(140,185,255,.45);border-radius:12px;padding:5px;margin-bottom:14px}
+.case__shot img{display:block;width:100%;aspect-ratio:1213/747;object-fit:cover;border-radius:8px}
+.case__tag{
+  position:absolute;top:-11px;left:-9px;z-index:2;
+  padding:6px 13px;border-radius:5px;
+  background:linear-gradient(100deg,#E8423A 0%,#F4863D 100%);
+  font-family:var(--en);font-size:11.5px;font-weight:800;letter-spacing:.06em;
+  color:#fff;text-transform:uppercase;white-space:nowrap;
+  box-shadow:0 5px 12px -5px rgba(0,0,0,.6);
+}
+/* the slanted "7天内获得批款" flash + its two chevrons */
+.case__flash{position:absolute;left:-9px;bottom:12px;z-index:2;display:flex;align-items:stretch;gap:4px;filter:drop-shadow(0 5px 12px rgba(0,0,0,.45))}
+.case__flash b{
+  display:block;padding:5px 14px 5px 11px;
+  transform:skewX(-12deg);
+  background:linear-gradient(100deg,#E8423A 0%,#F4883D 100%);
+  font-size:13px;font-weight:800;color:#fff;letter-spacing:.02em;white-space:nowrap;
+}
+.case__flash b span{display:block;transform:skewX(12deg)}
+.case__flash i{display:block;width:14px;background:#F4883D;
+  clip-path:polygon(0 0,52% 0,100% 50%,52% 100%,0 100%,48% 50%)}
+.case__flash i:last-child{background:#F79A45}
+
+/* the RM figure */
+.case__amount{display:block;height:52px;width:auto;max-width:100%;margin:0 0 14px}
+
+/* the two fact chips */
+/* the designer gives the problem chip the wider half (~44:56) — the revenue
+   chip only ever holds "RM12Mil", the problem one holds up to 8 Chinese characters */
+.case__facts{position:relative;display:grid;grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);gap:10px;margin:0 0 12px}
+.case__facts::before{content:"";position:absolute;left:12%;right:12%;top:-9px;height:1px;
+  background:linear-gradient(90deg,rgba(255,130,40,0) 0%,rgba(255,170,90,.85) 50%,rgba(255,130,40,0) 100%)}
+.fact{display:flex;align-items:center;gap:8px;min-width:0;
+  padding:8px 9px;border-radius:9px;
+  border:1px solid rgba(130,180,255,.40);
+  background:linear-gradient(180deg,rgba(10,62,140,.75) 0%,rgba(6,40,100,.75) 100%)}
+.fact img{height:26px;width:auto;flex:none}
+.fact div{min-width:0}
+/* the problem titles are Chinese and run to 7 characters — they wrap rather than
+   truncate, because an ellipsis in the middle of 银行迟迟未批 reads as a bug */
+.fact b{display:block;font-family:var(--en);font-size:16px;font-weight:900;color:#fff;line-height:1.18}
+.fact i{display:block;font-style:normal;font-size:10px;font-weight:600;color:#8CB6E8;line-height:1.3;margin-top:2px}
+.fact--cn b{font-family:var(--cn);font-size:13px;letter-spacing:-.02em}
+
+/* the story panel */
+.case__note{position:relative;display:flex;align-items:center;gap:11px;flex:1;
+  padding:13px 13px 14px;border-radius:10px;
+  border:1px solid rgba(130,180,255,.34);
+  background:linear-gradient(180deg,rgba(9,55,128,.7) 0%,rgba(5,34,88,.7) 100%)}
+.case__note::before{content:"";position:absolute;left:16%;right:16%;top:-8px;height:1px;
+  background:linear-gradient(90deg,rgba(255,130,40,0) 0%,rgba(255,170,90,.7) 50%,rgba(255,130,40,0) 100%)}
+.case__note img.ico{height:38px;width:auto;flex:none;opacity:.95}
+.case__note p{margin:0;font-size:12.5px;line-height:1.85;color:#EAF2FF;font-weight:500;text-align:left}
+.case__note .logo{height:13px;width:auto;min-height:0;display:inline-block;vertical-align:-1px;margin:0 3px}
+.cases .cta-row{margin-top:34px}
 
 
 /* ============================================================
@@ -624,14 +671,31 @@ img{max-width:100%;display:block}
   .step__pin{top:-15px;left:14px;width:26px}
   .fcard{grid-template-columns:1fr}
   .fcard__photo{min-height:180px}
-  .caselist{grid-template-columns:1fr;gap:18px}
-  .case__media{aspect-ratio:16/5}
-  .case__body{padding:18px 18px 20px}
-  .case__name{font-size:19px;margin-bottom:12px}
-  .case__stats{margin-bottom:13px}
-  .case__stat .val{font-size:19px}
-  .case__text{font-size:13.5px;line-height:1.95}
-  .case__text .logo{height:14px}
+  /* Mobile follows the single-card sample: every element is sized as a share of
+     the card's own width (container query units), measured off that sample —
+     note text 3.45cqw at line-height 1.47, RM figure 16cqw tall, problem title
+     3.8cqw. So the card stays proportionally identical whatever width we give it.
+     The max() floors stop the smallest type going below legible size on a phone. */
+  /* the 380px cap stops a 600-680px tablet rendering one card wider than the
+     desktop card is (530px), which looked absurd */
+  .caselist{grid-template-columns:min(100%,70vw,380px);justify-content:center;gap:20px}
+  .case{padding:3.6cqw 3.6cqw 4.2cqw;border-radius:15px}
+  .case__shot{padding:4px;margin-bottom:3.6cqw}
+  .case__tag{font-size:max(9.5px,3.5cqw);padding:5px 10px;top:-9px;left:-7px}
+  .case__flash{left:-7px;bottom:10px;gap:3px}
+  .case__flash b{font-size:max(10px,4.4cqw);padding:4px 11px 4px 9px}
+  .case__flash i{width:11px}
+  .case__amount{height:16cqw;margin-bottom:3.4cqw}
+  .case__facts{gap:2.6cqw;margin-bottom:3.2cqw}
+  .fact{padding:2.3cqw;gap:2cqw;border-radius:8px}
+  .fact img{height:7.2cqw}
+  .fact b{font-size:max(11px,5.2cqw)}
+  .fact--cn b{font-size:max(9.5px,3.8cqw)}
+  .fact i{font-size:max(7.5px,2.7cqw);margin-top:1px}
+  .case__note{padding:3.4cqw 3.2cqw 3.6cqw;gap:2.6cqw}
+  .case__note img.ico{height:10cqw}
+  .case__note p{font-size:max(9px,3.45cqw);line-height:1.47}
+  .case__note .logo{height:max(9px,3.4cqw)}
   .faqgrid{grid-template-columns:1fr;grid-auto-rows:auto;gap:30px;padding-bottom:0}
   .qa__q{font-size:14px;padding:8px 15px}
   .qa{min-height:0}
@@ -805,76 +869,139 @@ img{max-width:100%;display:block}
 
     <div class="caselist">
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-1-construction.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Construction <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM8,000,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,500,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-1-construction.jpg" alt="">
+          <span class="case__tag">CONSTRUCTION</span>
+          <span class="case__flash"><b><span>7天内获得批款</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-1-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM8Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">成功 <span class="o">Bid 到 RM40M 政府工程</span>，但银行 Project Financing 迟迟未批，启动资金不足，项目面临延误。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">7 天内获得 RM1.5M 启动资金</span>，顺利开工。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>银行迟迟未批</b><i>Project Financing</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>成功 Bid 到 RM40M 政府工程，但银行 Project Financing 迟迟未批，启动资金不足，项目面临延误。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"> 7 天内获得 RM1.5M 启动资金，顺利开工。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-2-trading.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Trading <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM6,000,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,200,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-2-trading.jpg" alt="">
+          <span class="case__tag">TRADING</span>
+          <span class="case__flash"><b><span>3天内获得批款</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-2-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM6Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">Main Supplier 要求公司<span class="o">半年内完成 RM2M 订单</span>，但订单量大导致短期 Cash Flow 不足，影响出货进度。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST">，<span class="g">Site Visit 后 3 天内获得 RM1.2M 周转资金</span>，顺利完成订单。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>短期完成大批订单</b><i>导致资金链受影响</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>Main Supplier 要求公司半年内完成 RM2M 订单，但订单量大导致短期 Cash Flow 不足，影响出货进度。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST">，Site Visit 后 3 天内获得 RM1.2M 周转资金，顺利完成订单。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-3-manufacturing.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Manufacturing <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM12,000,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM1,800,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-3-manufacturing.jpg" alt="">
+          <span class="case__tag">MANUFACTURING</span>
+          <span class="case__flash"><b><span>7天内获得批款</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-3-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM12Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">公司接到 <span class="o">MNC 大额 Automotive Plastic Components 订单</span>，但生产所需资金不足，无法及时增加产能。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">7 天内获得 RM1.8M 生产资金</span>，成功扩大产能并顺利投入生产。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>接获 MNC 大订单</b><i>资金不足，无法扩大产能</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>公司接到 MNC 大额 Automotive Plastic Components 订单，但生产所需资金不足，无法及时增加产能。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"> 7 天内获得 RM1.8M 生产资金，成功扩大产能并顺利投入生产。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-4-technology.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Technology <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM18,000,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM2,000,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-4-technology.jpg" alt="">
+          <span class="case__tag">TECHNOLOGY</span>
+          <span class="case__flash"><b><span>获批融资金额</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-4-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM18Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">公司拿下 <span class="o">RM5M MNC Project</span>，但 Supplier 要求提前付款，前期资金压力大，影响 Project 执行。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">解决前期 Supplier Payment Cash Flow</span>，让公司顺利启动并推进 Project。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>要求提前付款</b><i>资金压力大影响项目执行</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>公司拿下 RM5M MNC Project，但 Supplier 要求提前付款，前期资金压力大，影响 Project 执行。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"> 解决前期 Supplier Payment Cash Flow，让公司顺利启动并推进 Project。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-5-healthcare.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Healthcare <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM5,000,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM800,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-5-healthcare.jpg" alt="">
+          <span class="case__tag">HEALTHCARE</span>
+          <span class="case__flash"><b><span>8天内获得批款</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-5-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM5Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">接到<span class="o">大型 Hospital Supplies 订单</span>，但原有融资额度不足，短期 Cash Flow 面临压力。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">8 天内获得 RM800K 资金</span>，让订单顺利完成。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>因融资额度不足</b><i>导致短期资金周转紧张</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>接到大型 Hospital Supplies 订单，但原有融资额度不足，短期 Cash Flow 面临压力。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"> 8 天内获得 RM800K 资金，让订单顺利完成。</p>
         </div>
       </article>
       <article class="case rv">
-        <div class="case__media"><img src="assets/img/case-6-facility-management.jpg" alt=""></div>
-        <div class="case__body">
-          <h3 class="case__name">Facility Management <span class="cn">公司</span></h3>
-          <div class="case__stats">
-            <div class="case__stat"><span class="lbl">年营业额：</span><span class="val">RM3,800,000</span></div>
-            <div class="case__stat case__stat--won"><span class="lbl">获批额度：</span><span class="val">RM600,000</span></div>
+        <div class="case__shot">
+          <img src="assets/img/case-6-facility-management.jpg" alt="">
+          <span class="case__tag">FACILITY MANAGEMENT</span>
+          <span class="case__flash"><b><span>获批融资金额</span></b><i></i><i></i></span>
+        </div>
+        <img class="case__amount" src="assets/img/case-6-amount.png" alt="">
+        <div class="case__facts">
+          <div class="fact">
+            <img src="assets/img/case-icon-revenue.png" alt="">
+            <div><b>RM3.8Mil</b><i>企业年营业额</i></div>
           </div>
-          <p class="case__text">接获价值 <span class="o">RM6M、3 年期 Facility Management Contract</span>，但项目需要新增约 80 名员工，前期运营资金不足。<br>通过 <img class="logo" src="assets/svg/capboost-wordmark-navy.svg" alt="CAPBOOST"> <span class="g">获得 RM600K 启动资金</span>，解决人力及项目初期 Cash Flow。</p>
+          <div class="fact fact--cn">
+            <img src="assets/img/case-icon-alert.png" alt="">
+            <div><b>前期需新增员工</b><i>运营资金不足</i></div>
+          </div>
+        </div>
+        <div class="case__note">
+          <img class="ico" src="assets/img/case-icon-note.png" alt="">
+          <p>接获价值 RM6M、3 年期 Facility Management Contract，但项目需要新增约 80 名员工，前期运营资金不足。通过 <img class="logo" src="assets/svg/capboost-wordmark-white.svg" alt="CAPBOOST"> 获得 RM600K 启动资金，解决人力及项目初期 Cash Flow。</p>
         </div>
       </article>
     </div>
-      </article>
-    </div>
-      </article>
-    </div>
+
 
     <div class="cta-row"><a class="cta cta--teal" href="#lead"><span>我想查看申请资格！</span></a></div>
   </div>
